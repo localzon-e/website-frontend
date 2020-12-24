@@ -1,24 +1,14 @@
-# localzon-e
+# localzon(e)
 
-## Project setup
-```
-npm install
-```
+![localzone](/src/assets/Logo.png)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Join the localzon(e)
+1. make sure ```npm``` is installed. Download [node.js](https://nodejs.org).
+2. run ```npm install``` to install all necessary packages defined in ```package.json```.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+#### Compiles and hot-reloads for development
+call ```npm run serve``` to start the development server.
 
-### Lints and fixes files
-```
-npm run lint
-```
+#### Compiles and minifies for production
+call ```npm run build``` to build the project for production.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
