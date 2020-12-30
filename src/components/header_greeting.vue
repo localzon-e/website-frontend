@@ -1,7 +1,7 @@
 <template>
   <h1 id="welcome-msg">Welcome to <span id="localzone">localzon(e)</span></h1>
   <h2>{{ sIntros.intro }}</h2>
-  <img alt="Vue logo" src="@/assets/Logo.png">
+  <img alt="Vue logo" src="@/assets/logo.png">
 </template>
 
 <script>
@@ -13,9 +13,9 @@ export default {
     return {
       sIntros: {
         intros: [
-          'Be a local hero',
-          'Buy at 127.0.0.1',
-          'We need more local heroes like you!'
+          '22222Be a local hero',
+          '11111Buy at 127.0.0.1',
+          '11111We need more local heroes like you!'
         ],
         indexIntros: 0,
         intro: '',
