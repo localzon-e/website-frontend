@@ -1,7 +1,6 @@
 <template>
   <h1 id="welcome-msg">Welcome to <span id="localzone">localzon(e)</span></h1>
   <h2>{{ sIntros.intro }}</h2>
-  <img alt="Vue logo" src="@/assets/Logo.png">
 </template>
 
 <script>
