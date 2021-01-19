@@ -1,6 +1,6 @@
 # localzon(e)
 
-![localzone](/src/assets/Logo.png)
+![localzone](/src/assets/logo.png)
 
 ## Join the localzon(e)
 1. make sure ```npm``` is installed. Download [node.js](https://nodejs.org).
