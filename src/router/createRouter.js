@@ -1,14 +1,14 @@
 import app from '@/createEntrypoint'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import main from '@/views/main'
+import Main from '@/views/Main'
 
 const router = createRouter({
     routes: [
         {
             path: '/',
-            component: main,
-            name: 'main'
+            component: Main,
+            name: 'Main'
         }
     ],
     history: createWebHashHistory()
