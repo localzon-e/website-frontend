@@ -10,7 +10,7 @@ deploy:
   skip_cleanup: true
   keep_history: true
   on:
-    branch: main
+    branch: master
   target-branch:
     gh-pages
   local_dir: dist
