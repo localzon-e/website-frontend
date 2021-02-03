@@ -14,5 +14,4 @@ env:
   global:
     secure: ix/s1V689+ZdXvHXCBY02GSL0m5/7rOBXxjGccPc2UPoxJvafQTT7p6/uDfs0KxzM9a89chGYuacYPVIRltEZO2FArTxp20WplHeHAgWFHfaSv7aIV62HSbCIj23PsiyMbixsDeGGx4dhEwZB2PquJQX/+3LKHLMPA6Gk/qflA7lvaQnPyUVM+4wz6hx0Obx7fyEAkkqh/KEnPBe0YiMPL8nr6iaXYPX8IiXKUscocmqmr5ZDlbW2Rbo1yvhp1SMxF1JD89O2viVUwXuc6u0VQ8+1JSVAsig63Pxu+P6m6PI1Cyd0VVFgoY+ma1Y1RkFdJon9oRGdu8HNrlFIxTMaQEy9BU1nsZR9hyvbsSzOanCUwpuQfO2rAdt6oSARFmLO/+LYSHeFrEeudXivHP8BDmaE/WsI4zwMOysq91mpUf/RUee0jK0q1AQZXwcbYf0Y4hMcu1QL0ilKKfSiX2SDCzFuVJXEifKI2KYuoyrVYA5PAk74SjnlQMbkoxsMytAdF3hzyy6+eyPSSw1GN5xoBtAC/SjHApXSvuYyQuaAyrJjXGmf1euE9JX81u+IVCDBFDTHtrKXBu1HAGk8FV6wExP3Pmab8owA/Cm1VYXjYL5txWRyi8lNjmF46jNqHeufvtmhHl4Q5eiEcxQ1NBbYYa2EncE0o9g8GMn+g8HSqM=
 before_install:
-- openssl aes-256-cbc -K $encrypted_e7bc9709eade_key -iv $encrypted_e7bc9709eade_iv
-  -in github_deploy_key.enc -out .\\github_deploy_key -d
+- openssl aes-256-cbc -K $encrypted_e7bc9709eade_key -iv $encrypted_e7bc9709eade_iv -in github_deploy_key.enc -out .\\github_deploy_key -d
