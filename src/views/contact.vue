@@ -1,8 +1,9 @@
 <template>
   <h1>Contact Us</h1>
-  <input />
 </template>
 
 <script>
-
+export default {
+  name: 'contact'
+}
 </script>
