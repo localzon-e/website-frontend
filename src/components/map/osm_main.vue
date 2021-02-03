@@ -1,5 +1,5 @@
 <template>
-  <osm_coordinates @update_coords="coordinates.centerCoordinates = $event"/>
+  <osm_coordinates @update_coords="coordinates.centerCoordinates = $event" />
   <osm_map :coordinates="coordinates"/>
 </template>
 
@@ -16,10 +16,11 @@ export default {
   data() {
     return {
       coordinates: {
-        centerCoordinates: [8, 47],
+        centerCoordinates: [8.85, 47.76],
         coordinates: []
       }
     }
-  }
+  },
+  inject: ['searchQuery']
 }
 </script>

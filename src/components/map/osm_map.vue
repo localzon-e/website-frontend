@@ -1,9 +1,5 @@
 <template>
-  <div id="map" class="map">
-    <p>
-      <a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>
-    </p>
-  </div>
+  <div id="map" class="map" />
 </template>
 
 <script>
@@ -49,7 +45,7 @@ export default {
       view: new View({
         constrainResolution: true,
         center: proj.fromLonLat(this.centerCoordinates),
-        zoom: 15
+        zoom: 12
       })
     })
   },

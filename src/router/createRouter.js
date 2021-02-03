@@ -1,17 +1,28 @@
 import app from '@/createEntrypoint'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
-import Main from '@/views/Main'
+import Home from '@/views/Home'
+import Contact from '@/views/Contact'
 
 const router = createRouter({
     routes: [
         {
             path: '/',
-            component: Main,
-            name: 'Main'
-        }
+            component: Home,
+            name: 'Home'
+        },
+        {
+            path: '/Home',
+            component: Home,
+            name: 'Home'
+        },
+        {
+            path: '/Contact',
+            component: Contact,
+            name: 'Contact'
+        },
     ],
-    history: createWebHashHistory()
+    history: createWebHistory()
 })
 
 app.use(router)

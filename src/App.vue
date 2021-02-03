@@ -1,10 +1,25 @@
 <template>
-  <router-view />
+  <navigation-bar @search="searchQuery = $event"/>
+  <router-view/>
 </template>
 
 <script>
+import NavigationBar from "@/components/navigation_bar";
+import { computed } from 'vue';
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {NavigationBar},
+  data() {
+    return {
+      searchQuery: 'Singen'
+    }
+  },
+  provide() {
+    return {
+      searchQuery: computed(() => this.searchQuery)
+    }
+  }
 }
 </script>
 
