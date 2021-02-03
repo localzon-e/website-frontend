@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <!--<router-link class="navbar-item" to="/Home">
+      <router-link class="navbar-item" to="/Home">
         <img :src="require('@/assets/Logo.png')" alt="localzon(e)">
-      </router-link> -->
+      </router-link>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarLinks">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>

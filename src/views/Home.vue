@@ -7,7 +7,7 @@
 import osm_main from "@/components/map/osm_main.vue"
 
 export default {
-  name: 'main',
+  name: 'home',
   components: {
     osm_main
   }
