@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 cache: npm
 before_script:
-  - npm install
+- npm install
 script: npm run build
 deploy:
   provider: pages
@@ -11,10 +11,8 @@ deploy:
   keep_history: true
   on:
     branch: master
-  target-branch:
-    gh-pages
+  target-branch: gh-pages
   local_dir: dist
 env:
   global:
-    secure: S7vOk9SXUcvS+/9d7UeAkq9pr+ymAuU+hoJYASfiWAM9qWECpaLCiMttJUo4knolmOzoqPUsWtuZLvmSyJfF+pb13p/XL7xriIIuvs1Av7vpKlBnkryWEW9WSd0vY3zR5hMZah5SVPKFSQuNlRqkzEFF3ln14NDTU89qOnwPfS4ZntEnUvIUJaAT1fdQV3NBL/YqMuyLl3EBKuAZ01NTh3/60uam7VYunmz1mM3RyAllC15Pe4+oMjXaXmvloVQJ5uB97sCSL4SZ/5I3k6tBVNh4+irgT++CV6wlDmqSm+MKGJCuAidujQuArtoU7vqlChQHJ7DpwnS02S8jBKN/s4W/WTsbuDNUuq+Qu9VWrz1rrb7vB37xgJ/WYUiWOo8FD+e75DZcIr3CvLNOJMU2SHr6eHGETFbDvXTxQUjZMerAja1cxxAoXths6JaGZDciL2Q94W8J19KTdnv4VEwXU2W4ZuflC3DbR07BXQsYQmUeYmNKTHe4amW0yLh0Og8s+pXKItVszUq1K3FLOrfA/Yz9ZZVNVUgo++Zuk5t1/y1q8qIis3gCPP3v8fo955QlshWEg3EL60Qe6YwTeWjt6CH3LRxRmeQz7qU394meRTy67DSjM4Wbx3QMCtGBPybfNh+Wx9mhM/CvPn/qfgWCFpjP66ycCySJ7wQrncIwv04=
-
+    secure: AQ5Cja7wRTgWAFnnR+Geop/FuKzqp42AFue20JZ/SvCdINZQF2RLdpmWE/FVq/JhL2u59QMItqQdYgKr2cWfCjFZ3hYouOJV9XNsXyGxteGD9DtmeXPDOnCVFgX4BbGGZdiPQbNcqgJvqKIUwkZfFwslVCulffG3jXCYDir7N9urheXDx7aTaz6NhQQycjjlf8lv9JWuBpHtL48Qbxn+fW8A18BZJm0jMxBhiUjttSOCMaOAsmifn3OybFQhtlhlv3ipsrGXNAkzPqHUkZGVM9oUSkRaPmKAxQIAYXLxFg7Jrw79wcYHKO9lx5sxqUwfWyBSMTmF/m0GzlBUJvCK1Ufya4WqMpjI+5RPqC7bgMloPJAbu6lo4f9R9MqIQz1/v6Qj+UIZ58VQGLzxiipELCtM1iyFVWd6WHo7pZMTx8kBi/APg+NfoNQnDfK+jRQPYK/mjJjWcfIoC09sBe5yKnflaj5yt4279VoO3z6XavevS/yuH7FT8y7xzGz2ra54tvIAy3TeHAS3SQmAZ2UH+G4xX2/z3jDCksm9Vxp1yUMeT/SwUev7JyoY6zsqvt9XgF+kWKXmJUMo8QKUj6Kj/UgK5oGuiv5lLurYPpR062MSQxW/B99ioXqatMc1TXc9hzKugABE7DR2eHk48au/desNaoJGUmI26KcshPwT/Zw=
