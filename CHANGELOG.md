@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## 0.1.5 - 04.02.2021
+
+### Added
+
+* search.vue: now more user-friendly.
+
+### Changed
+
+* Contact.vue: 
+  * testing contact form.
+  * added eMail regex.
+* icons: added fonts awesome icon pack.
+* css: 
+  * ```noselect``` on most elements.
+  * fixed css on mobile.
+
+
 ## 0.1.4 - 04.02.2021
 
 ### Added

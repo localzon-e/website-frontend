@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
+    <div class="navbar-brand noselect">
       <!-- svg is required here!! -->
       <!-- <router-link class="navbar-item" to="/">
         <img :src="require('@/assets/Logo.png')" alt="localzon(e)">
@@ -15,13 +15,13 @@
 
     <div id="navbarLinks" class="navbar-menu">
       <div class="navbar-start">
-        <router-link v-for="route in routes" :key="route" :to="route.path" class="navbar-item">
+        <router-link v-for="route in routes" :key="route" :to="route.path" class="navbar-item noselect">
           {{ route.name }}
         </router-link>
       </div>
 
       <div class="navbar-center">
-        <div class="navbar-item title">
+        <div class="navbar-item title noselect">
           Localzon(e)
         </div>
       </div>
@@ -69,9 +69,22 @@ export default {
   background-color: var(--navbar-bg);
 }
 
-.navbar > * :not(input) {
+@media screen and (max-width: 1023px) {
+  .navbar {
+    color: black;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-item, .navbar-link {
+    color: var(--navbar-color)
+  }
+}
+
+#navbarBurger {
   color: var(--navbar-color);
 }
+
 
 .navbar-item.navbar-center {
   position: fixed;

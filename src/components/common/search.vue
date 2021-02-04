@@ -5,17 +5,34 @@
     </div>
   </template>
   <template v-else>
-    <p class="control has-icons-left">
-    <span>
-      <input class="input green" @focus="disableSearchInputTimeout" @blur="searchActive = false"
-             type="search" v-model="searchQuery" @keyup="search"
-             placeholder="Search localzon(e)"/>
-    </span>
-      <span class="icon is-small is-left">
-      <i class="search-icon"></i>
-    </span>
-    </p>
-    <button v-if="searchQuery.length > 0" class="delete" @click="searchQuery = ''"/>
+    <div class="field has-addons">
+      <p class="control has-icons-left ">
+        <span>
+          <input class="input green" @focus="disableSearchInputTimeout"
+                 type="search" v-model="searchQuery" @keyup="searchOnEnter"
+                 placeholder="Search Localzon(e)"/>
+        </span>
+        <span class="icon is-small is-left" v-if="!searchButton">
+          <i class="fas fa-search"></i>
+        </span>
+      </p>
+      <p class="control">
+        <template v-if="!searchButton">
+          <button class="button green" @click="clearButton">
+            <span class="icon is-small" >
+              <i class="fas fa-times"></i>
+            </span>
+          </button>
+        </template>
+        <template v-else>
+          <button class="button green" @click="search">
+            <span class="icon is-small" >
+              <i class="fas fa-search"></i>
+            </span>
+          </button>
+        </template>
+      </p>
+    </div>
   </template>
 </template>
 
@@ -25,7 +42,9 @@ export default {
   data() {
     return {
       searchActive: false,
+      searchButton: false,
       searchInputTimeout: null,
+      searchQueryTimeout: null,
       searchQuery: ''
     }
   },
@@ -42,11 +61,28 @@ export default {
     disableSearchInputTimeout: function () {
       clearTimeout(this.searchInputTimeout)
     },
-    search: function (e) {
+    search: function () {
+      this.searchButton = false
+      this.$emit('search', this.searchQuery)
+    },
+    searchOnEnter: function (e) {
+      clearTimeout(this.searchQueryTimeout)
       if (e.keyCode === 13) {
-        this.$emit('search', this.searchQuery)
+        this.searchButton = false
+        this.search()
+      } else {
+        this.searchQueryTimeout = setTimeout(() => {
+          this.searchButton = true
+        }, 2500)
       }
     },
+    clearButton: function () {
+      if (this.searchQuery !== '') {
+        this.searchQuery = ''
+      } else {
+        this.searchActive = false
+      }
+    }
   }
 }
 </script>
