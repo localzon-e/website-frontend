@@ -5,7 +5,7 @@
 
 <script>
 import NavigationBar from "@/components/navigation_bar";
-import { computed } from 'vue';
+import {computed} from 'vue';
 
 export default {
   name: 'App',
@@ -28,12 +28,35 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
   margin-top: 60px;
+  padding: 1em;
+}
+
+:root {
+  --main-color: #5C8001;
+  --second-color: #86312D;
+  --third-color: #7CB518;
 }
 
 #localzone, #localzon {
-  color: #56882d;
+  color: var(--main-color);
 }
+
+
+/* button */
+
+.green.button {
+  background-color: var(--main-color);
+  border-color: transparent;
+  color: #fff;
+}
+
+.green.input, .green.textarea {
+  border-color: var(--main-color);
+}
+
+/* transitions */
+
 </style>
