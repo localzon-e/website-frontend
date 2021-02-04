@@ -38,6 +38,8 @@ export default {
   --main-color: #5C8001;
   --second-color: #86312D;
   --third-color: #7CB518;
+  --navbar-bg: #393e46;
+  --navbar-color: white;
 }
 
 #localzone, #localzon {

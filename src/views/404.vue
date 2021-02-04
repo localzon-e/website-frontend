@@ -1,5 +1,5 @@
 <template>
-  <h1 class="title">Mhhh...</h1>
+  <h1 class="title">Ooops... seems you're not local anymore.</h1>
 </template>
 
 <script>

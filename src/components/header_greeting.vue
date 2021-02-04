@@ -1,10 +1,8 @@
 <template>
-  <h1 id="welcome-msg">Welcome to <span id="localzone">localzon(e)</span></h1>
+  {{ sIntros.intro }}
 </template>
 
 <script>
-import {mapState, mapGetters} from 'vuex'
-
 export default {
   name: 'header-greeting',
   data() {
@@ -21,20 +19,12 @@ export default {
       }
     }
   },
-  computed: {
-    ...mapState([
-      'articles'
-    ]),
-    ...mapGetters([
-        'getAllArticles'
-    ])
-  },
   methods: {
     writeText: function () {
       if (this.sIntros.charPositionIntro < this.sIntros.intros[this.sIntros.indexIntros].length) {
         this.sIntros.intro = this.sIntros.intro + this.sIntros.intros[this.sIntros.indexIntros].charAt(this.sIntros.charPositionIntro)
         this.sIntros.charPositionIntro++
-        setTimeout(this.writeText, 100)
+        setTimeout(this.writeText, 150)
       } else {
         this.sIntros.charPositionIntro = 0
       }

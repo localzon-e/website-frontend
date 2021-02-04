@@ -1,6 +1,18 @@
 # CHANGELOG
 
-## 0.1.3 - 03.02.2021
+## 0.1.4 - 04.02.2021
+
+### Added
+
+* search.vue: added reusable search component.
+
+### Changed
+
+* 404.vue: changed text of 404.
+* navigation_bar.vue: removed logo.
+* css: small style changes. Biggest: dark navigation bar... idk anything about colors...
+
+## 0.1.3 - 04.02.2021
 
 ### Added
 
@@ -8,7 +20,7 @@
 
 ### Changed
 
-* navigation_bar: now works on mobile too.
+* navigation_bar.vue: now works on mobile too.
 * index.html: added meta information.  
 * css: small style changes.
 

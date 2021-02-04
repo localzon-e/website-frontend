@@ -1,8 +1,10 @@
 # localzon(e)
 
-![localzone](/src/assets/logo.png)
+### newest changes are listed [here](/CHANGELOG.md)
 
-## Join the localzon(e)
+![localzone](/src/assets/Logo.png)
+
+### Join the localzon(e)
 1. make sure ```npm``` is installed. Download [node.js](https://nodejs.org).
 2. run ```npm install``` to install all necessary packages defined in ```package.json```.
 
