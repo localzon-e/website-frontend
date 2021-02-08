@@ -16,7 +16,7 @@
     <div id="navbarLinks" class="navbar-menu">
       <div class="navbar-start">
         <router-link v-for="route in routes" :key="route" :to="route.path" class="navbar-item noselect">
-          {{ route.name }}
+          {{ $t('views.' + route.name + '.name') }}
         </router-link>
       </div>
 
@@ -28,6 +28,16 @@
 
 
       <div class="navbar-end">
+        <div class="navbar-item ">
+          <div class="select">
+            <select v-model="$i18n.locale">
+              <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{
+                  locale
+                }}
+              </option>
+            </select>
+          </div>
+        </div>
         <div class="navbar-item">
           <search v-bind="$attrs"/>
         </div>
@@ -69,15 +79,24 @@ export default {
   background-color: var(--navbar-bg);
 }
 
+/* mobile */
 @media screen and (max-width: 1023px) {
   .navbar {
     color: black;
   }
 }
 
+/* desktop */
 @media screen and (min-width: 1024px) {
   .navbar-item, .navbar-link {
     color: var(--navbar-color)
+  }
+
+  .navbar-center {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: auto;
   }
 }
 
@@ -85,12 +104,4 @@ export default {
   color: var(--navbar-color);
 }
 
-
-.navbar-item.navbar-center {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: auto;
-}
 </style>

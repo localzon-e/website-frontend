@@ -17,7 +17,8 @@ export default {
   },
   provide() {
     return {
-      searchQuery: computed(() => this.searchQuery)
+      searchQuery: computed(() => this.searchQuery),
+      isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent)
     }
   }
 }
@@ -71,5 +72,7 @@ export default {
 }
 
 /* transitions */
+
+
 
 </style>

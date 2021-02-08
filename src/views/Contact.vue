@@ -1,25 +1,53 @@
 <template>
-  <h1 class="title">Contact Us</h1>
-  <div class="field">
-    <p class="control has-icons-left has-icons-right">
-      <input class="input" type="email" placeholder="E-Mail" v-model="eMail">
-      <span class="icon is-small is-left">
+  <div class="columns">
+    <div class="column">
+      <div class="field has-addons" id="contact-email">
+        <p class="control has-icons-left has-icons-right">
+          <input :class="['input', {'is-success': checkEMail && eMail, 'is-warning': !checkEMail && eMail}]"
+                 type="email"
+                 placeholder="E-Mail"
+                 v-model="eMail">
+          <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
       </span>
-      <span class="icon is-small is-right" v-if="checkEMail">
-        <i class="fas fa-check"></i>
-      </span>
-      <span class="icon is-small is-right" v-else>
-        <i class="fas fa-times"></i>
-      </span>
-    </p>
+        </p>
+        <p class="control">
+          <template v-if="eMail">
+            <button class="button green" @click="eMail = ''">
+            <span class="icon is-small">
+              <i class="fas fa-times"></i>
+            </span>
+            </button>
+          </template>
+        </p>
+      </div>
+
+      <div class="field" id="contact-textarea">
+        <p class="control has-icons-left has-icons-right">
+          <textarea class="textarea" placeholder="e.g. Hello world"/>
+        </p>
+        <p class="control">
+          <template v-if="eMail">
+            <button class="button green" @click="eMail = ''">
+            <span class="icon is-small">
+              <i class="fas fa-times"></i>
+            </span>
+            </button>
+          </template>
+        </p>
+      </div>
+    </div>
+
+    <div class="column">
+      <h1 class="title">Contact Us</h1>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'contact',
-  data () {
+  data() {
     return {
       eMail: ''
     }

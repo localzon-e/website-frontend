@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## 0.2 - 08.02.2021
+
+### Added
+
+* i18n: added translations for the german and english language:
+  * updated all components to use translations.
+
+### Changed
+
+* Contact.vue:
+  * got feedback and changed behaviour of e-mail input.
+  * added ```<textarea />```.
+* Home.vue:
+  * added explanation of localzon(e).
+* navigation_bar: added locales option.
+
+
 ## 0.1.5 - 04.02.2021
 
 ### Added

@@ -1,5 +1,36 @@
 {
-  "PageNotFound": {
-    "404": "Ooops... seems you're not local anymore"
+  "views": {
+    "Home": {
+      "name": "Home"
+    },
+    "Contact": {
+      "name": "Contact"
+    },
+    "PageNotFound": {
+      "text": "Ooops... seems you're not local anymore.",
+      "goback_text": "Let us bring you back. Click on the button.",
+      "goback_button": "Go Home!"
+    }
+  },
+  "components": {
+    "search": {
+      "search_text": "Search",
+      "search_localzone": "Search Localzon(e)"
+    },
+    "how_it_works": {
+      "faq": [
+        {
+          "question": "What is Localzon(e)?",
+          "answer": "Localzon(e) is place where you can find local groceries."
+        },
+        {
+          "question": "How does it work?",
+          "answer": {
+            "desktop": "<b>On the top right</b> you can search for products.<br>Based on your location we will suggest you places where you can buy these local products.",
+            "mobile": "<b>On the top right</b> you will find a button to open the navigation bar. Once clicked a green button will appear. Click it and search for your products.<br>Based on your location we will suggest you places where you can buy these local products."
+          }
+        }
+      ]
+    }
   }
 }

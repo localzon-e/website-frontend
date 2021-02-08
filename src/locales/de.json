@@ -1,0 +1,33 @@
+{
+  "views": {
+    "Home": {
+      "name": "Startseite"
+    },
+    "Contact": {
+      "name": "Kontakt"
+    },
+    "PageNotFound": {
+      "text": "Uuuups... da haben wir uns wohl verirrt.",
+      "goback_text": "Lass uns gemeinsam zurück gehen. Klicke auf den Kopf.",
+      "goback_button": "Zur Startseite!"
+    }
+  },
+  "components": {
+    "search": {
+      "search_text": "Suche",
+      "search_localzone": "Durchsuche Localzon(e)"
+    },
+    "how_it_works": {
+      "faq": [
+        {
+          "question": "Was ist Localzon(e)?",
+          "answer": "Localzon(e) ist eine Plattform, um lokale Produkte zu finden."
+        },
+        {
+          "question": "Wie funktioniert das?",
+          "answer": "<b>Oben rechts</b> findest du eine Suche.<br>Wenn du auf diese klickst, kannst du nach Produkten suchen. Wir schlagen dir dann Standorte in deiner Nähe vor, an denen du diese Produkte kaufen kannst."
+        }
+      ]
+    }
+  }
+}
