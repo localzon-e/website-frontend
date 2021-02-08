@@ -1,10 +1,22 @@
 # CHANGELOG
 
+## 0.2.1 - 08.02.2021
+
+### Added
+
+* location: asking now for location.
+* locale: added german translation:
+
+### Changed
+
+* page loading: trying to improve page loading times.
+* css: working on future transition to sass.
+
 ## 0.2 - 08.02.2021
 
 ### Added
 
-* i18n: added translations for the german and english language:
+* locale: added translations for the german and english language:
   * updated all components to use translations.
 
 ### Changed

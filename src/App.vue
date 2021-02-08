@@ -1,30 +1,36 @@
 <template>
   <navigation-bar @search="searchQuery = $event"/>
+  <get_location @location="location = $event"/>
   <router-view/>
 </template>
 
 <script>
 import NavigationBar from "@/components/navigation_bar";
 import {computed} from 'vue';
+import get_location from "@/components/utility/get_location";
 
 export default {
   name: 'App',
-  components: {NavigationBar},
+  components: {get_location, NavigationBar},
   data() {
     return {
-      searchQuery: ''
+      searchQuery: '',
+      location: null
     }
   },
   provide() {
     return {
       searchQuery: computed(() => this.searchQuery),
-      isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent)
+      isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent),
+      location: computed(() => this.location)
     }
   }
 }
 </script>
 
 <style>
+@import "./assets/ol.css";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -72,7 +78,5 @@ export default {
 }
 
 /* transitions */
-
-
 
 </style>
