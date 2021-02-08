@@ -4,7 +4,10 @@
       "name": "Home"
     },
     "Contact": {
-      "name": "Contact"
+      "name": "Contact",
+      "contact": "Contact us",
+      "placeholder_text": "Send us a message.",
+      "submit": "Submit!"
     },
     "PageNotFound": {
       "text": "Ooops... seems you're not local anymore.",

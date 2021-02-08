@@ -11,6 +11,7 @@
 
 * page loading: trying to improve page loading times.
 * css: working on future transition to sass.
+* Contact.vue: added disabled submit button.
 
 ## 0.2 - 08.02.2021
 

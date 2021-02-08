@@ -6,7 +6,8 @@
           <input :class="['input', {'is-success': checkEMail && eMail, 'is-warning': !checkEMail && eMail}]"
                  type="email"
                  placeholder="E-Mail"
-                 v-model="eMail">
+                 v-model="eMail"
+                 role="email">
           <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
       </span>
@@ -24,7 +25,7 @@
 
       <div class="field" id="contact-textarea">
         <p class="control has-icons-left has-icons-right">
-          <textarea class="textarea" placeholder="e.g. Hello world"/>
+          <textarea class="textarea" :placeholder="$t('views.Contact.placeholder_text')" role="textbox"/>
         </p>
         <p class="control">
           <template v-if="eMail">
@@ -36,10 +37,18 @@
           </template>
         </p>
       </div>
+
+      <div class="field">
+        <p class="control">
+          <button class="button green" disabled role="submit message">
+            {{ $t('views.Contact.submit') }}
+          </button>
+        </p>
+      </div>
     </div>
 
     <div class="column">
-      <h1 class="title">Contact Us</h1>
+      <h1 class="title">{{ $t('views.Contact.contact') }}</h1>
     </div>
   </div>
 </template>

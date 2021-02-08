@@ -4,7 +4,10 @@
       "name": "Startseite"
     },
     "Contact": {
-      "name": "Kontakt"
+      "name": "Kontakt",
+      "contact": "Kontaktiere uns",
+      "placeholder_text": "Schreibe uns eine Nachricht.",
+      "submit": "Senden!"
     },
     "PageNotFound": {
       "text": "Uuuups... da haben wir uns wohl verirrt.",
