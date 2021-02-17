@@ -39,6 +39,9 @@
           </div>
         </div>
         <div class="navbar-item">
+          <register />
+        </div>
+        <div class="navbar-item">
           <search v-bind="$attrs"/>
         </div>
       </div>

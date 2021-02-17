@@ -1,8 +1,8 @@
 <template>
   <template v-if="!searchActive">
-    <div class="button green" @click="activeSearchInputTimeout">
+    <button class="button green" @click="activeSearchInputTimeout">
       <strong>{{ $t('components.search.search_text') }}</strong>
-    </div>
+    </button>
   </template>
   <template v-else>
     <div class="field has-addons">

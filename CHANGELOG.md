@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## 0.2.2 - 17.02.2021
+
+### Added
+
+* register.vue: added register button. Disabled yet.
+
+### Changed
+
+* structure: changed structure.
+* search: fixed search and location. Files changed:
+  * search.vue
+  * osm_main.vue
+
+
 ## 0.2.1 - 08.02.2021
 
 ### Added

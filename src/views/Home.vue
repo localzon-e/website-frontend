@@ -12,7 +12,7 @@
 
 <script>
 import osm_main from "@/components/map/osm_main.vue"
-import how_it_works from "@/components/how_it_works";
+import how_it_works from "@/components/home/how_it_works";
 
 export default {
   name: 'home',

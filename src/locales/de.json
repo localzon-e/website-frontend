@@ -20,6 +20,9 @@
       "search_text": "Suche",
       "search_localzone": "Durchsuche Localzon(e)"
     },
+    "register": {
+      "register_text": "Registrieren"
+    },
     "how_it_works": {
       "faq": [
         {

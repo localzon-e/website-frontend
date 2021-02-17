@@ -5,9 +5,11 @@ import './createi18n'
 import '@/assets/font_awesome'
 
 import search from '@/components/common/search.vue'
+import register from '@/components/common/register.vue'
 import get_location from '@/components/utility/get_location'
 
 app.component('search', search)
+app.component('register', register)
 app.component('get_location', get_location)
 
 app.mount('#app')
