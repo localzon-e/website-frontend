@@ -2,8 +2,6 @@ import app from '@/createEntrypoint'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import Home from '@/views/Home'
-import Contact from "@/views/Contact";
-import PageNotFound from "@/views/404";
 
 const router = createRouter({
     routes: [
@@ -14,12 +12,17 @@ const router = createRouter({
         },
         {
             path: '/Contact',
-            component: Contact,
+            component: () => import(/* webpackChunkName: "Contact" */ '@/views/Contact'),
             name: 'Contact'
         },
         {
+            path: '/SignIn',
+            component: () => import(/* webpackChunkName: "SignIn" */ '@/views/SignIn'),
+            name: 'SignIn'
+        },
+        {
             path: '/:pathMatch(.*)*',
-            component: PageNotFound,
+            component: () => import(/* webpackChunkName: "404" */ '@/views/404'),
             name: 'PageNotFound'
         },
     ],

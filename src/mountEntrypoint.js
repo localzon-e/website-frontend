@@ -5,7 +5,7 @@ import './createi18n'
 import '@/assets/font_awesome'
 
 import search from '@/components/common/search.vue'
-import register from '@/components/common/register.vue'
+import register from '@/components/signIn/signIn.vue'
 import get_location from '@/components/utility/get_location'
 
 app.component('search', search)

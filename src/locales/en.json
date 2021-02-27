@@ -5,9 +5,13 @@
     },
     "Contact": {
       "name": "Contact",
-      "contact": "Contact us",
+      "contact_text": "Contact us",
       "placeholder_text": "Send us a message.",
       "submit": "Submit!"
+    },
+    "SignIn": {
+      "name": "Sign in",
+      "signIn_text": "Sign in to Localzon(e)."
     },
     "PageNotFound": {
       "text": "Ooops... seems you're not local anymore.",
@@ -17,11 +21,17 @@
   },
   "components": {
     "search": {
-      "search_text": "Search",
-      "search_localzone": "Search Localzon(e)"
+      "search_button": "Search",
+      "search_text": "Search Localzon(e)"
     },
-    "register": {
-      "register_text": "Register"
+    "signIn": {
+      "signIn_button": "Sign in"
+    },
+    "email": {
+      "email_text": "Email address"
+    },
+    "password": {
+      "password_text": "Password"
     },
     "how_it_works": {
       "faq": [

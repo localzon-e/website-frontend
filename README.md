@@ -1,6 +1,7 @@
-# localzon(e)
+# [Localzon(e)](https://localzon-e.github.io/website-frontend/#/)
 
 ### newest changes are listed [here](/CHANGELOG.md)
+
 
 ![localzone](/src/assets/Logo.png)
 

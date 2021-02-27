@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## 0.3 - 27.02.2021
+
+### Added
+
+* signIn: added signIn option. Not usable yet.
+* checkEmail.js & checkPassword.js: added functions that help checking input.
+* password.vue & email.vue: outsourced reusable components.
+* scss: integrated [sass-lang](https://sass-lang.com/) and replaced most css.
+  * colors: replaced green with is-primary.
+* Logo: added the logo instead of the name.
+* ticker.vue: added a ticker for the future.
+
+### Changed
+
+* App.vue: moved all css to scss file in /styles.
+* Contact.vue: using components and thus reducing space.
+* router.js: now uses webpack's lazyLoading.
+* vue.config.js: configured webpack to split everything in chunks.
+
+### Removed
+
+* deploy keys
+
+
 ## 0.2.2 - 17.02.2021
 
 ### Added

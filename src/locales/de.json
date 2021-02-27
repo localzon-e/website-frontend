@@ -5,9 +5,13 @@
     },
     "Contact": {
       "name": "Kontakt",
-      "contact": "Kontaktiere uns",
+      "contact_text": "Kontaktiere uns",
       "placeholder_text": "Schreibe uns eine Nachricht.",
       "submit": "Senden!"
+    },
+    "SignIn": {
+      "name": "Registrierung",
+      "signIn_text": "Registriere dich jetzt bei uns."
     },
     "PageNotFound": {
       "text": "Uuuups... da haben wir uns wohl verirrt.",
@@ -17,11 +21,17 @@
   },
   "components": {
     "search": {
-      "search_text": "Suche",
-      "search_localzone": "Durchsuche Localzon(e)"
+      "search_button": "Suche",
+      "search_text": "Durchsuche Localzon(e)"
     },
-    "register": {
-      "register_text": "Registrieren"
+    "signIn": {
+      "signIn_button": "Registrieren"
+    },
+    "email": {
+      "email_text": "E-Mail Adresse"
+    },
+    "password": {
+      "password_text": "Passwort"
     },
     "how_it_works": {
       "faq": [
@@ -32,8 +42,8 @@
         {
           "question": "Wie funktioniert das?",
           "answer": {
-            "desktop": "<b>Oben rechts</b> findest du einen grünen Knopf.<br>Wenn du auf diese klickst, kannst du nach Produkten suchen. Wir schlagen dir dann Standorte in deiner Nähe vor, an denen du diese Produkte kaufen kannst.",
-            "mobile": "<b>Oben rechts</b> findest du einen Knopf, mit dem du die Navigationsleiste aufklappen kannst. Wenn du dann auf den grünen Knopf drückst, kannst nach Produkten suchen. Click it and search for your products.<br>Wir schlagen dir dann Standorte in deiner Nähe vor, an denen du diese Produkte kaufen kannst."
+            "desktop": "<b>Oben rechts</b> findest du einen grünen Knopf.<br>Wenn du auf diesen klickst, kannst du nach Produkten suchen. Wir schlagen dir dann Standorte in deiner Nähe vor, an denen du diese Produkte kaufen kannst.",
+            "mobile": "<b>Oben rechts</b> findest du einen Knopf, mit dem du die Navigationsleiste aufklappen kannst. Wenn du dann auf den grünen Knopf drückst, kannst nach Produkten suchen. <br>Wir schlagen dir dann Standorte in deiner Nähe vor, an denen du diese Produkte kaufen kannst."
           }
         }
       ]

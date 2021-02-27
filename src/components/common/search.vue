@@ -1,16 +1,17 @@
 <template>
   <template v-if="!searchActive">
-    <button class="button green" @click="activeSearchInputTimeout">
-      <strong>{{ $t('components.search.search_text') }}</strong>
+    <button class="button is-primary" @click="activeSearchInputTimeout">
+      <strong>{{ $t('components.search.search_button') }}</strong>
     </button>
   </template>
   <template v-else>
     <div class="field has-addons">
       <p class="control has-icons-left">
         <span>
-          <input class="input green" @focus="disableSearchInputTimeout"
+          <input class="input is-primary" @focus="disableSearchInputTimeout"
                  type="search" v-model="searchQuery" @keyup="searchOnEnter"
-                 :placeholder="$t('components.search.search_localzone')"/>
+                 id="search-input"
+                 :placeholder="$t('components.search.search_text')"/>
         </span>
         <span class="icon is-small is-left" v-if="!searchButton">
           <i class="fas fa-search"></i>
@@ -18,14 +19,14 @@
       </p>
       <p class="control">
         <template v-if="!searchButton">
-          <button class="button green" @click="clearButton">
+          <button class="button is-primary" @click="clearButton">
             <span class="icon is-small">
               <i class="fas fa-times"></i>
             </span>
           </button>
         </template>
         <template v-else>
-          <button class="button green" @click="search">
+          <button class="button is-primary" @click="search">
             <span class="icon is-small">
               <i class="fas fa-search"></i>
             </span>
@@ -50,7 +51,12 @@ export default {
   },
   methods: {
     activeSearchInputTimeout: function () {
+      this.$router.push({name: 'Home'})
       this.searchActive = true
+      /* it needs some time before being found in the DOM, therefore timeout */
+      setTimeout(() => {
+        document.getElementById('search-input').focus()
+      }, 100)
       this.searchInputTimeout = setTimeout(() => {
         this.searchActive = false
         setTimeout(() => {

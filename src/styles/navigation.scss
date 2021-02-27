@@ -1,0 +1,38 @@
+@import "colors.scss";
+
+#logo {
+  transform: scale(2) !important;
+}
+
+.navbar {
+  background-color: $navbar-background-color;
+}
+
+/* mobile */
+@media screen and (max-width: 1023px) {
+  .navbar-brand .navbar-item {
+    color: $navbar-item-color;
+  }
+
+  .navbar-start {
+    color: black;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1024px) {
+  .navbar-item, .navbar-link {
+    color: $navbar-item-color;
+  }
+
+  .navbar-center {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: auto;
+  }
+}
+
+#navbarBurger {
+  color: $navbar-item-color;
+}
