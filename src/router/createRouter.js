@@ -16,6 +16,11 @@ const router = createRouter({
             name: 'Contact'
         },
         {
+            path: '/Imprint',
+            component: () => import(/* webpackChunkName: "Imprint" */ '@/views/Imprint'),
+            name: 'Imprint'
+        },
+        {
             path: '/SignIn',
             component: () => import(/* webpackChunkName: "SignIn" */ '@/views/SignIn'),
             name: 'SignIn'

@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## 0.3.1 - 27.02.2021
+
+### Added
+
+* Imprint.vue.
+* map.scss: outsourced css from `vue`.
+
+### Changed
+
+* password.vue: added requirements for the password.
+* navigation_bar.vue: restyled some buttons.
+* submit buttons now disappear if requirements are not met.
+* search: changed behaviour of search to be more intuitive.
+  * when jumping to `Home` to search, navbar does not hide anymore.
+  * when searching, navbar hides now to show map.
+
 ## 0.3 - 27.02.2021
 
 ### Added

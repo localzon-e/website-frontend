@@ -56,21 +56,3 @@ export default {
   }
 }
 </script>
-
-<style>
-/* desktop */
-@media screen and (min-width: 1024px) {
-  .map {
-    width: 100%;
-    height: 80vh;
-  }
-}
-
-/* mobile */
-@media screen and (max-width: 1023px) {
-  .map {
-    width: 100%;
-    height: 400px;
-  }
-}
-</style>

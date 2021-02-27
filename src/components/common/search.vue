@@ -8,7 +8,7 @@
     <div class="field has-addons">
       <p class="control has-icons-left">
         <span>
-          <input class="input is-primary" @focus="disableSearchInputTimeout"
+          <input class="input is-primary" @focus="activeSearchInputTimeout"
                  type="search" v-model="searchQuery" @keyup="searchOnEnter"
                  id="search-input"
                  :placeholder="$t('components.search.search_text')"/>
@@ -51,7 +51,8 @@ export default {
   },
   methods: {
     activeSearchInputTimeout: function () {
-      this.$router.push({name: 'Home'})
+      this.$emit('searchIsActive')
+      clearTimeout(this.searchInputTimeout)
       this.searchActive = true
       /* it needs some time before being found in the DOM, therefore timeout */
       setTimeout(() => {
@@ -59,17 +60,12 @@ export default {
       }, 100)
       this.searchInputTimeout = setTimeout(() => {
         this.searchActive = false
-        setTimeout(() => {
-          this.searchQuery = ''
-        }, 5000)
       }, 10000)
-    },
-    disableSearchInputTimeout: function () {
-      clearTimeout(this.searchInputTimeout)
     },
     search: function () {
       this.searchButton = false
       this.$emit('search', this.searchQuery)
+      this.searchQuery = ''
     },
     searchOnEnter: function (e) {
       clearTimeout(this.searchQueryTimeout)
@@ -92,9 +88,3 @@ export default {
   }
 }
 </script>
-
-<style>
-input {
-  color: black;
-}
-</style>

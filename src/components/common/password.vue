@@ -1,8 +1,8 @@
 <template>
   <div class="field has-addons" id="password">
     <p class="control has-icons-left has-icons-right">
-      <input :class="['input', {'is-success': checkPassword && password, 'is-danger': !checkPassword && password}]"
-             type="password"
+      <input :class="['input', {'is-success': compactCheckPassword && password, 'is-danger': !compactCheckPassword && password}]"
+             type="text"
              :placeholder="$t('components.password.password_text')"
              v-model="password"
              role="textbox">
@@ -20,6 +20,20 @@
       </template>
     </p>
   </div>
+  <div v-if="password">
+    <ul>
+      <li v-for="check in Object.entries(checkPassword)" :key="check">
+        <div class="icon-text" v-if="check[1]">
+          <span class="icon is-small has-text-success"><i class="fas fa-check is-primary"></i></span>
+          <span v-html="descriptions[check[0]][0]" />
+        </div>
+        <div v-else>
+          <span class="icon is-small has-text-danger"><i class="fas fa-times"></i></span>
+          <span v-html="descriptions[check[0]][1]" />
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -31,16 +45,38 @@ export default {
   data() {
     return {
       password: '',
-      checkPassword: false
+      checkPassword: {
+        /* see checkPassword.js for regex */
+        numbers: false,
+        upperCase: false,
+        lowerCase: false,
+        specialCharacter: false,
+        minimumCharacter: false
+      }
+    }
+  },
+  computed: {
+    compactCheckPassword: function () {
+      const values = Object.values(this.checkPassword)
+      for (let i = 0; i < values.length; i++) {
+        if (values[i] === false)
+          return false
+      }
+      return true
+    },
+    descriptions: function () {
+      return this.$i18n.getLocaleMessage(this.$i18n.locale).components.password.password_checks
     }
   },
   watch: {
     password: function () {
       this.checkPassword = checkPassword(this.password)
-      if (this.checkPassword)
+      const check = this.checkPassword
+      if (check.numbers && check.upperCase && check.lowerCase && check.minimumCharacter) {
         this.$emit('password', sha3_512(this.password))
-      else
+      } else {
         this.$emit('password', '')
+      }
     }
   }
 }

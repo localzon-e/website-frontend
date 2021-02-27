@@ -1,5 +1,15 @@
-export function checkPassword (password) {
+export function checkPassword(password) {
     // eslint-disable-next-line no-control-regex
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
-    return passwordRegex.test(password)
+    const containsNumbers = /(?=.*\d)/
+    const containsUppercase = /(?=.*[A-Z])/
+    const containsLowercase = /(?=.*[a-z])/
+    const containsSpecialCharacter = /(?=.*[@$!%*?&])/
+    const containsMinimumEightCharacters = /[A-Za-z\d@$!%*?&]{8,}/
+    return {
+        numbers: containsNumbers.test(password),
+        upperCase: containsUppercase.test(password),
+        lowerCase: containsLowercase.test(password),
+        specialCharacter: containsSpecialCharacter.test(password),
+        minimumCharacter: containsMinimumEightCharacters.test(password)
+    }
 }

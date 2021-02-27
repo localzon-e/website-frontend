@@ -5,9 +5,14 @@
     },
     "Contact": {
       "name": "Contact",
-      "contact_text": "Contact us",
+      "contact_text": "Contact us!",
       "placeholder_text": "Send us a message.",
       "submit": "Submit!"
+    },
+    "Imprint": {
+      "name": "Imprint",
+      "imprint_text": "Allow us to introduce ourselves.",
+      "imprint_credentials": "We are:<br>Fabian and Josef.<br>78224 Singen (Hohentwiel)<br><br>You can reach us via:<br>localzon-e (at) protonmail.com"
     },
     "SignIn": {
       "name": "Sign in",
@@ -31,7 +36,14 @@
       "email_text": "Email address"
     },
     "password": {
-      "password_text": "Password"
+      "password_text": "Password",
+      "password_checks": {
+        "numbers": ["Contains at least one number.", "Include at least one number."],
+        "upperCase": ["Contains at least one uppercase character.", "Include at least one uppercase character."],
+        "lowerCase": ["Contains at least one lowercase character.", "Include at least one lowercase character."],
+        "specialCharacter": ["Contains at least one special character.", "Include at least one special character like <code>@ $ ! % * ? &</code>."],
+        "minimumCharacter": ["Contains at least eight characters.", "Password must be at least eight characters long."]
+      }
     },
     "how_it_works": {
       "faq": [

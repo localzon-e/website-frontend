@@ -9,7 +9,7 @@
 
   <div class="field">
     <p class="control">
-      <button class="button is-primary" disabled role="button">
+      <button class="button is-primary" v-if="eMail && textbox" role="button">
         {{ $t('views.Contact.submit') }}
       </button>
     </p>

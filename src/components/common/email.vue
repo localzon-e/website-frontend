@@ -3,7 +3,7 @@
     <p class="control has-icons-left has-icons-right">
       <input :class="['input', {'is-success': checkEMail && eMail, 'is-warning': !checkEMail && eMail}]"
              @focusout="handleEmail"
-             @keypress="clearTimeout(checkEmailTimeout)"
+             @keypress="removeEmailDelayed"
              @keyup="handleEmailDelayed"
              type="email"
              :placeholder="$t('components.email.email_text')"
@@ -49,6 +49,9 @@ export default {
       this.checkEmailTimeout = setTimeout(() => {
         this.handleEmail()
       }, 100)
+    },
+    removeEmailDelayed: function () {
+      clearTimeout(this.checkEmailTimeout)
     }
   }
 }

@@ -9,7 +9,7 @@
 
       </div>
       <a role="button" class="navbar-burger" id="navbarBurger" aria-label="menu" aria-expanded="false"
-         data-target="navbarLinks" @click="toggleMenuOnMobile">
+         data-target="navbarLinks" @click="toggleNavigationBarOnMobile">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -40,10 +40,10 @@
           </div>
         </div>
         <div class="navbar-item">
-          <register />
-        </div>
-        <div class="navbar-item">
-          <search v-bind="$attrs"/>
+          <div class="buttons">
+            <register/>
+            <search v-bind="$attrs" @searchIsActive="searchIsActive" @search="search"/>
+          </div>
         </div>
       </div>
     </div>
@@ -53,16 +53,17 @@
 <script>
 export default {
   name: 'navigation-bar',
-  data () {
+  data() {
     return {
       mapLocaleToLanguage: {
         'de': 'Deutsch',
         'en': 'English'
       },
       notIncludedRoutes: [
-          'PageNotFound',
-          'SignIn'
-      ]
+        'PageNotFound',
+        'SignIn'
+      ],
+      isHiddenNavigationBarOnMobile: true
     }
   },
   computed: {
@@ -71,19 +72,36 @@ export default {
     }
   },
   methods: {
-    toggleMenuOnMobile: function () {
+    toggleNavigationBarOnMobile: function () {
       const burger = document.getElementById('navbarBurger')
       const $target = document.getElementById('navbarLinks')
       burger.classList.toggle('is-active')
       $target.classList.toggle('is-active')
-    }
-  },
-  watch: {
-    $route: function () {
+    },
+    hideNavigationBarOnMobile: function () {
       const burger = document.getElementById('navbarBurger')
       const $target = document.getElementById('navbarLinks')
       burger.classList.remove('is-active')
       $target.classList.remove('is-active')
+    },
+    search: function () {
+      this.searchIsActive()
+      if (document.getElementById('navbarBurger').classList.contains('is-active')) {
+        this.hideNavigationBarOnMobile()
+      }
+    },
+    searchIsActive: function () {
+      this.isHiddenNavigationBarOnMobile = false
+      if (this.$route.name !== 'Home')
+        this.$router.push({name: 'Home'})
+    },
+  },
+  watch: {
+    $route: function () {
+      if (this.isHiddenNavigationBarOnMobile) {
+        this.hideNavigationBarOnMobile()
+      }
+      this.isHiddenNavigationBarOnMobile = true
     }
   }
 }

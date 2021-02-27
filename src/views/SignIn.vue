@@ -5,7 +5,7 @@
       <password @password="password = $event"/>
       <div class="field">
         <p class="control">
-          <button class="button is-primary" :disabled="!(eMail && password)" role="button">
+          <button class="button is-primary" v-if="eMail && password" role="button">
             {{ $t('views.Contact.submit') }}
           </button>
         </p>
