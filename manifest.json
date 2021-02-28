@@ -1,0 +1,11 @@
+{
+  "name": "Localzon(e)",
+  "short_name": "Localzon(e)",
+  "start_url": "/website-frontend/",
+  "display": "standalone",
+  "background_color" : "#fff" ,
+  "description": "Localzon(e) - Helping Local Business.",
+  "related_applications": [{
+    "platform": "Web"
+  }]
+}
