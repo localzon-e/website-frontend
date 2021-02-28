@@ -3,7 +3,7 @@
     <div class="navbar-brand noselect">
       <div class="navbar-item noselect">
         <!-- svg is required here!! -->
-        <router-link class="navbar-item" to="/">
+        <router-link class="navbar-item" :to="{ name: 'Home' }">
           <span id="logo" />
         </router-link>
 
@@ -18,7 +18,7 @@
 
     <div id="navbarLinks" class="navbar-menu">
       <div class="navbar-start">
-        <router-link v-for="route in routes" :key="route" :to="route.path" class="navbar-item noselect">
+        <router-link v-for="route in routes" :key="route" :to="{ name: route.name }" class="navbar-item noselect">
           {{ $t('views.' + route.name + '.name') }}
         </router-link>
       </div>
