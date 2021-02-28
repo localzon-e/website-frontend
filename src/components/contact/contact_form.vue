@@ -1,11 +1,15 @@
 <template>
-  <email @email="eMail = $event"/>
-  <div class="field" id="contact-textarea">
-    <p class="control has-icons-left has-icons-right">
+  <form>
+    <fieldset>
+      <email @email="eMail = $event"/>
+      <div class="field" id="contact-textarea">
+        <p class="control has-icons-left has-icons-right">
         <textarea class="textarea" :placeholder="$t('views.Contact.placeholder_text')" v-model="textbox"
                   role="textbox"/>
-    </p>
-  </div>
+        </p>
+      </div>
+    </fieldset>
+  </form>
 
   <div class="field">
     <p class="control">

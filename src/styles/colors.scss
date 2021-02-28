@@ -1,7 +1,7 @@
 @import "/node_modules/bulma/sass/utilities/functions";
 
 /* main colors */
-$green: #5c8001;
+$green: #5a9c30;
 $light-green: findLightColor($green);
 $dark-green: #4f6608;
 $primary: $green;
@@ -17,6 +17,7 @@ $button-active-color: $pressed;
 /* navigation bar */
 $navbar-background-color: #393e46;
 $navbar-item-color: white;
+
 
 @import "/node_modules/bulma";
 

@@ -1,31 +1,37 @@
 <template>
-  <navigation-bar @search="searchQuery = $event"/>
-  <get_location @location="location = $event"/>
-  <router-view/>
+  <navigation-bar @resetQuickFind="quickFindResults={}"/>
+  <router-view @quickFindResults="addToQuickFind($event)"/>
+  <get_location />
+  <fix_vul/>
 </template>
 
 <script>
 import NavigationBar from "@/components/navigation_bar";
 import {computed} from 'vue';
 import get_location from "@/components/utility/get_location";
+import fix_vul from "@/components/utility/fix_vulnerabilities";
 
 export default {
   name: 'App',
-  components: {get_location, NavigationBar},
+  components: {fix_vul, get_location, NavigationBar},
   data() {
     return {
-      searchQuery: '',
-      location: null
+      quickFindResults: {}
+    }
+  },
+  methods: {
+    addToQuickFind: function (results) {
+      const category = Object.keys(results)[0]
+      this.quickFindResults[category] = results[category]
     }
   },
   provide() {
     return {
-      searchQuery: computed(() => this.searchQuery),
       isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent),
-      location: computed(() => this.location)
+      quickFindResults: computed(() => this.quickFindResults)
     }
   }
 }
 </script>
 
-<style lang="scss" src="./styles/main_style.scss" />
+<style lang="scss" src="./styles/main_style.scss"/>

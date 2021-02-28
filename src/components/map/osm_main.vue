@@ -1,5 +1,5 @@
 <template>
-  <osm_coordinates @update_coords="coords = $event"/>
+  <osm_coordinates @update_coords="coords = $event" v-bind="$attrs"/>
   <osm_map :coordinates="coordinates"/>
 </template>
 
@@ -13,18 +13,12 @@ export default {
     osm_coordinates,
     osm_map
   },
-  inject: ['location'],
-  data () {
+  data() {
     return {
       coords: [8.85, 47.76]
     }
   },
   computed: {
-    reactiveLocation: function () {
-      if (this.location.value !== null)
-        return this.location.value.coords
-      return null
-    },
     coordinates: function () {
       return {
         centerCoordinates: this.coords,
@@ -33,9 +27,10 @@ export default {
     }
   },
   watch: {
-    reactiveLocation: function (newCoords) {
-      if (newCoords !== null)
-        this.coords = [newCoords.longitude, newCoords.latitude]
+    '$route.query': function (newQuery) {
+      if (newQuery.lat && newQuery.lon) {
+        this.coords = [newQuery.lon, newQuery.lat]
+      }
     }
   }
 }

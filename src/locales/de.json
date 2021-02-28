@@ -49,14 +49,23 @@
       "faq": [
         {
           "question": "Was ist Localzon(e)?",
-          "answer": "Localzon(e) ist eine Plattform, die dir hilft lokale Produkte zu finden."
+          "answer": "<span class='localzone'>Localzon(e)</span> ist ein Ort, an dem lokale Produkte finden kannst."
         },
         {
           "question": "Wie funktioniert das?",
-          "answer": {
-            "desktop": "<b>Oben rechts</b> findest du einen grünen Knopf.<br>Wenn du auf diesen klickst, kannst du nach Produkten suchen. Wir schlagen dir dann Standorte in deiner Nähe vor, an denen du diese Produkte kaufen kannst.",
-            "mobile": "<b>Oben rechts</b> findest du einen Knopf, mit dem du die Navigationsleiste aufklappen kannst. Wenn du dann auf den grünen Knopf drückst, kannst nach Produkten suchen. <br>Wir schlagen dir dann Standorte in deiner Nähe vor, an denen du diese Produkte kaufen kannst."
-          }
+          "answer": "Am Besten startest du mit der Suche nach Produkten. Über die Navigationsleiste oben kannst nach bestimmten Produkten oder Orten suchen. Sobald du suchst, aktualisiert sich die Karte und zeigt die Produkte und Anbieter an."
+        },
+        {
+          "question": "Was hab ich davon?",
+          "answer": "Du kannst durch unsere Plattform neue lokale Händler finden, bei denen du einkaufen kannst."
+        },
+        {
+          "question": "Kostet das etwas?",
+          "answer": "<b>Nein</b>. Wir bieten dir diese Plattform kostenfrei an."
+        },
+        {
+          "question": "Wie finanziert ihr eure Plattform?",
+          "answer": "Wir verzichten vollständig auf Werbung und Tracking auf unserer Seite. Ihr könnt unsere Plattform durch Spenden unterstützen."
         }
       ]
     }

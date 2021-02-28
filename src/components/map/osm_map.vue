@@ -52,6 +52,7 @@ export default {
   watch: {
     centerCoordinates: function (newCoordinates) {
       this.map.getView().setCenter(proj.fromLonLat(newCoordinates))
+      this.map.getView().setZoom(15)
     }
   }
 }

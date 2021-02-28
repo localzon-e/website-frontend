@@ -1,7 +1,7 @@
 <template>
   <div class="columns">
     <div class="column">
-      <osm_main/>
+      <osm_main v-bind="$attrs"/>
     </div>
     <div class="column">
       <how_it_works/>

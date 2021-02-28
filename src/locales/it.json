@@ -1,0 +1,73 @@
+{
+  "views": {
+    "Home": {
+      "name": "Home"
+    },
+    "Contact": {
+      "name": "Contatto",
+      "contact_text": "Contattaci!",
+      "placeholder_text": "Inviaci un messaggio.",
+      "submit": "Submit!"
+    },
+    "Imprint": {
+      "name": "Sigla editoriale",
+      "imprint_text": "Permetteteci di presentarci.",
+      "imprint_credentials": "Siamo: <br> Fabian e Josef. <br> 78224 Singen (Hohentwiel) <br> <br> Potete contattarci tramite: <br> localzon-e (at) protonmail.com"
+    },
+    "SignIn": {
+      "name": "Accedi",
+      "signIn_text": "Accedi a Localzon(e)."
+    },
+    "PageNotFound": {
+      "text": "Ops ... sembra che questa pagina non esiste.",
+      "goback_text": "Lascia che ti riportiamo indietro. Fai clic sul pulsante.",
+      "goback_button": "Vai a casa!"
+    }
+  },
+  "components": {
+    "search": {
+      "search_button": "Cerca",
+      "search_text": "Cerca Localzon(e)"
+    },
+    "signIn": {
+      "signIn_button": "Accedi"
+    },
+    "email": {
+      "email_text": "Indirizzo email"
+    },
+    "password": {
+      "password_text": "Password",
+      "password_checks": {
+        "numbers": ["Contiene almeno un numero.", "Includi almeno un numero."],
+        "upperCase": ["Contiene almeno un carattere maiuscolo.", "Includi almeno un carattere maiuscolo."],
+        "lowerCase": ["Contiene almeno un carattere minuscolo.", "Includi almeno un carattere minuscolo."],
+        "specialCharacter": ["Contiene almeno un carattere speciale.", "Includi almeno un carattere speciale come <code> @ $!% *? & </code>."],
+        "minimumCharacter": ["Contiene almeno otto caratteri.", "La password deve contenere almeno otto caratteri."]
+      }
+    },
+    "how_it_works": {
+      "faq": [
+        {
+          "question": "Che cos'è Localzon(e)?",
+          "answer": "<span class = 'localzone'>Localzon(e)</span> è un posto dove puoi trovare generi alimentari locali."
+        },
+        {
+          "question": "Come funziona?",
+          "answer": "Il modo migliore per iniziare è cercare prodotti. Puoi utilizzare la barra di navigazione in alto per cercare prodotti o località specifiche. Non appena effettui la ricerca, la mappa viene aggiornata e mostra i prodotti e i produttori. "
+        },
+        {
+          "question": "Cosa ci guadagno?",
+          "answer": "Puoi utilizzare la nostra piattaforma per trovare nuovi rivenditori locali dove acquistare."
+        },
+        {
+          "question": "Costa qualcosa?",
+          "answer": "<b>No</b>. Ti offriamo questa piattaforma gratuitamente."
+        },
+        {
+          "question": "Come finanziate la vostra piattaforma?",
+          "answer": "Siamo contrari alla pubblicità e al monitoraggio sul nostro sito. Puoi supportare la nostra piattaforma con donazioni."
+        }
+      ]
+    }
+  }
+}

@@ -1,10 +1,10 @@
 <template>
-  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand noselect">
       <div class="navbar-item noselect">
         <!-- svg is required here!! -->
         <router-link class="navbar-item" to="/">
-          <img :src="require('@/assets/Logo_nobg.png')" alt="Localzon(e)" id="logo">
+          <span id="logo" />
         </router-link>
 
       </div>
@@ -18,7 +18,7 @@
 
     <div id="navbarLinks" class="navbar-menu">
       <div class="navbar-start">
-        <router-link v-for="route in routes" :key="route" :to="route.path" class="navbar-item noselect localzone">
+        <router-link v-for="route in routes" :key="route" :to="route.path" class="navbar-item noselect">
           {{ $t('views.' + route.name + '.name') }}
         </router-link>
       </div>
@@ -42,7 +42,7 @@
         <div class="navbar-item">
           <div class="buttons">
             <register/>
-            <search v-bind="$attrs" @searchIsActive="searchIsActive" @search="search"/>
+            <search v-bind="$attrs" @searchIsActive="searchIsActive" />
           </div>
         </div>
       </div>
@@ -57,7 +57,9 @@ export default {
     return {
       mapLocaleToLanguage: {
         'de': 'Deutsch',
-        'en': 'English'
+        'en': 'English',
+        'it': 'Italiano',
+        'ru': 'русский'
       },
       notIncludedRoutes: [
         'PageNotFound',
@@ -84,12 +86,6 @@ export default {
       burger.classList.remove('is-active')
       $target.classList.remove('is-active')
     },
-    search: function () {
-      this.searchIsActive()
-      if (document.getElementById('navbarBurger').classList.contains('is-active')) {
-        this.hideNavigationBarOnMobile()
-      }
-    },
     searchIsActive: function () {
       this.isHiddenNavigationBarOnMobile = false
       if (this.$route.name !== 'Home')
@@ -97,11 +93,8 @@ export default {
     },
   },
   watch: {
-    $route: function () {
-      if (this.isHiddenNavigationBarOnMobile) {
-        this.hideNavigationBarOnMobile()
-      }
-      this.isHiddenNavigationBarOnMobile = true
+    '$route.query.search': function () {
+      this.hideNavigationBarOnMobile()
     }
   }
 }

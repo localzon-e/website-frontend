@@ -49,14 +49,23 @@
       "faq": [
         {
           "question": "What is Localzon(e)?",
-          "answer": "Localzon(e) is place where you can find local groceries."
+          "answer": "<span class = 'localzone'>Localzon(e)</span> is a place where you can find local groceries."
         },
         {
           "question": "How does it work?",
-          "answer": {
-            "desktop": "<b>On the top right</b> you can search for products.<br>Based on your location we will suggest you places where you can buy these local products.",
-            "mobile": "<b>On the top right</b> you will find a button to open the navigation bar. Once clicked a green button will appear. Click it and search for your products.<br>Based on your location we will suggest you places where you can buy these local products."
-          }
+          "answer": "The best way to start is by searching for products. You can use the navigation bar on the top to search for specific products or locations. As soon as you search, the map is updated and shows the products and producers."
+        },
+        {
+          "question": "What's in it for me?",
+          "answer": "You can use our platform to find new local retailers where you can buy."
+        },
+        {
+          "question": "Does it cost anything?",
+          "answer": "<b>No</b>. We offer you this platform free of charge."
+        },
+        {
+          "question": "How do you finance your platform?",
+          "answer": "We are against running advertising and tracking on our site. You can support our platform with donations."
         }
       ]
     }

@@ -4,7 +4,7 @@ export default {
   mounted() {
     if (window.navigator.geolocation) {
       window.navigator.geolocation.getCurrentPosition(location => {
-        this.$emit('location', location)
+        this.$router.push({name: 'Home', query: {lat: location.coords.latitude, lon: location.coords.longitude}})
       });
     }
   }

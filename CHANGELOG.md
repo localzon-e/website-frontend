@@ -1,5 +1,28 @@
 # CHANGELOG
 
+## 0.4 - 28.02.2021
+
+### Added
+
+* fix_vulnerabilities.vue: added possibility to fix problems when loading the page.
+* manifest.json
+* locales: added italian and russian translations and reworked faq.
+* quickfind: added search suggestions.
+  * no quickfind for mobile.
+* fix_vulnerabilities.vue: added component that allows code fixing of dynamic components like map.
+
+
+### Changed
+
+* search.vue: changed search behaviour:
+  * search queries are passed via queries.
+  * added comments to better understand the code.
+* osm_coordinates.vue: now works only via queries.
+* events: removed most of the events and replaced them with queries.
+* colors.scss: tweaked primary-color.
+* router.js: changed to createWebHistory.
+
+
 ## 0.3.1 - 27.02.2021
 
 ### Added
