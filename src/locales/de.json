@@ -20,7 +20,7 @@
     },
     "PageNotFound": {
       "text": "Uuuups... da haben wir uns wohl verirrt.",
-      "goback_text": "Lass uns gemeinsam zurück gehen. Klicke auf den Kopf.",
+      "goback_text": "Lass uns gemeinsam zurückgehen. Klicke auf den Kopf.",
       "goback_button": "Zur Startseite!"
     }
   },
@@ -33,13 +33,13 @@
       "signIn_button": "Registrieren"
     },
     "email": {
-      "email_text": "E-Mail Adresse"
+      "email_text": "E-Mail-Adresse"
     },
     "password": {
       "password_text": "Passwort",
       "password_checks": {
         "numbers": ["Enthält mindestens eine Zahl.", "Füge mindestens eine Zahl hinzu."],
-        "upperCase": ["Enthält mindestens einen Grossbuchstaben.", "Füge mindestens einen Grossbuchstaben hinzu."],
+        "upperCase": ["Enthält mindestens einen Großbuchstaben.", "Füge mindestens einen Großbuchstaben hinzu."],
         "lowerCase": ["Enthält mindestens einen Kleinbuchstaben.", "Füge mindestens einen Kleinbuchstaben hinzu."],
         "specialCharacter": ["Enthält mindestens einen speziellen Charakter.", "Füge mindestens einen speziellen Charakter wie <code>@ $ ! % * ? &</code> hinzu."],
         "minimumCharacter": ["Enthält mindestens acht Zeichen.", "Passwort muss mindestens acht Zeichen lang sein."]
@@ -49,14 +49,14 @@
       "faq": [
         {
           "question": "Was ist Localzon(e)?",
-          "answer": "<span class='localzone'>Localzon(e)</span> ist ein Ort, an dem lokale Produkte finden kannst."
+          "answer": "<span class='localzone'>Localzon(e)</span> ist ein Ort, an dem du lokale Produkte finden kannst."
         },
         {
           "question": "Wie funktioniert das?",
-          "answer": "Am Besten startest du mit der Suche nach Produkten. Über die Navigationsleiste oben kannst nach bestimmten Produkten oder Orten suchen. Sobald du suchst, aktualisiert sich die Karte und zeigt die Produkte und Anbieter an."
+          "answer": "Am besten startest du mit der Suche nach Produkten. Über die Navigationsleiste oben kannst du nach bestimmten Produkten oder Orten suchen. Sobald du suchst, aktualisiert sich die Karte und zeigt die Produkte und Anbieter an."
         },
         {
-          "question": "Was hab ich davon?",
+          "question": "Was habe ich davon?",
           "answer": "Du kannst durch unsere Plattform neue lokale Händler finden, bei denen du einkaufen kannst."
         },
         {

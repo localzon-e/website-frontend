@@ -1,71 +1,71 @@
 {
   "views": {
     "Home": {
-      "name": "Dom"
+      "name": "Дом"
     },
     "Contact": {
-      "name": "Kontakt",
-      "contact_text": "Svyazhites' s nami!",
-      "placeholder_text": "Otprav'te nam soobshcheniye.",
-      "submit": "Otpravit'!"
+      "name": "Контакт",
+      "contact_text": "Свяжитесь с нами!",
+      "placeholder_text": "Отправьте нам сообщение.",
+      "submit": "Отправить!"
     },
     "Imprint": {
-      "name": "Vykhodnyye dannyye",
-      "imprint_text": "Razreshite predstavit'sya.",
-      "imprint_credentials": "My: <br> Fabian i Josef. <br> 78224 Singen (Hohentwiel) <br> <br> Vy mozhete svyazat'sya s nami cherez: <br> localzon-e (at) protonmail.com"
+      "name": "Выходные данные",
+      "imprint_text": "Разрешите представиться.",
+      "imprint_credentials": "Мы: <br>Fabian и Josef. <br> 78224 Singen (Hohentwiel) <br> <br> Вы можете связаться с нами через: <br> localzon-e (at) protonmail.com"
     },
     "SignIn": {
-      "name": "Voyti",
-      "signIn_text": "Voydite v Localzon(e)."
+      "name": "Войти",
+      "signIn_text": "Войдите в Localzon(e)."
     },
     "PageNotFound": {
       "text": "Не все, кто блуждает, потеряны ... но мы заблудились. давай пойдем домой.",
-      "goback_text": "Davayte vernem vas. Nazhmite na knopku.",
-      "goback_button": "Idi domoy!"
+      "goback_text": "Давайте вернем вас. Нажмите на кнопку.",
+      "goback_button": "Иди домой!"
     }
   },
   "components": {
     "search": {
-      "search_button": "Iskat'",
-      "search_text": "Iskat' v Localzon (e)"
+      "search_button": "Искать",
+      "search_text": "Искать в Localzon(e)"
     },
     "signIn": {
-      "signIn_button": "Voyti"
+      "signIn_button": "Войти"
     },
     "email": {
-      "email_text": "Adres elektronnoy pochty"
+      "email_text": "Адрес электронной почты"
     },
-    "password'": {
-      "password_text": "Parol'",
+    "password": {
+      "password_text": "Пароль",
       "password_checks": {
-        "chisla": ["Soderzhit khotya by odno chislo.", "Vklyuchayet khotya by odno chislo"],
-        "upperCase": ["Soderzhit khotya by odin simvol verkhnego registra.", "Vklyuchayet khotya by odin simvol verkhnego registra."],
-        "lowerCase": ["Soderzhit khotya by odin simvol nizhnego registra.", "Vklyuchit' khotya by odin simvol nizhnego registra."],
-        "specialCharacter": ["Soderzhit khotya by odin spetsial'nyy simvol.", "Vklyuchit' khotya by odin spetsial'nyy simvol, naprimer <code> @ $!% *? & </code>."],
-        "minimumCharacter": ["Soderzhit ne meneye vos'mi simvolov.", "Parol' dolzhen soderzhat' ne meneye vos'mi simvolov."]
+        "numbers": ["Содержит хотя бы одно число.", "Включает хотя бы одно число"],
+        "upperCase": ["Содержит хотя бы один символ верхнего регистра.", "Включает хотя бы один символ верхнего регистра."],
+        "lowerCase": ["Содержит хотя бы один символ нижнего регистра.", "Включить хотя бы один символ нижнего регистра."],
+        "specialCharacter": ["Содержит хотя бы один специальный символ.", "Включить хотя бы один специальный символ, например <code> @ $!% *? & </code>."],
+        "minimumCharacter": ["Содержит не менее восьми символов.", "Пароль должен содержать не менее восьми символов."]
       }
     },
     "how_it_works": {
       "faq": [
         {
-          "question": "Chto takoye Localzon(e)?",
-          "answer": "<span class = 'localzone'>Localzon(e)</span> - eto mesto, gde vy mozhete nayti mestnyye produkty."
+          "question": "Что такое Localzon(e)?",
+          "answer": "<span class='localzone'>Localzon(e)</span> - это место, где вы можете найти местные продукты"
         },
         {
-          "question": "Kak eto rabotayet?",
-          "answer": "Luchshe vsego nachat' s poiska produktov. Vy mozhete ispol'zovat' panel' navigatsii vverkhu dlya poiska opredelennykh produktov ili mestopolozheniy. Kak tol'ko vy nachnete poisk, karta obnovitsya i pokazhet produkty i proizvoditeley."
+          "question": "Как это работает?",
+          "answer": "Лучше всего начать с поиска продуктов. Вы можете использовать панель навигации вверху для поиска определенных продуктов или местоположений. Как только вы начнете поиск, карта обновится и покажет продукты и производителей."
         },
         {
-          "question": "Chto eto mne dast?",
-          "answer": "Vy mozhete ispol'zovat' nashu platformu, chtoby nayti novykh mestnykh roznichnykh prodavtsov, u kotorykh vy mozhete kupit'."
+          "question": "Что это мне даст?",
+          "answer": "Вы можете использовать нашу платформу, чтобы найти новых местных розничных продавцов, у которых вы можете купить"
         },
         {
-          "question": "Eto chego stoit?",
-          "answer": "<b>Net</b>. My predlagayem vam etu platformu besplatno."
+          "question": "Это чего стоит?",
+          "answer": "<b>Нет</b>. Мы предлагаем вам эту платформу бесплатно"
         },
         {
-          "question": "Kak vy finansiruyete svoyu platformu?",
-          "answer": "My protiv razmeshcheniya reklamy i otslezhivaniya na nashem sayte. Vy mozhete podderzhat' nashu platformu pozhertvovaniyami."
+          "question": "Как вы финансируете свою платформу?",
+          "answer": "Мы против размещения рекламы и отслеживания на нашем сайте. Вы можете поддержать нашу платформу пожертвованиями"
         }
       ]
     }

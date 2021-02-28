@@ -1,5 +1,5 @@
 import app from '@/createEntrypoint'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 import Home from '@/views/Home'
 
@@ -31,7 +31,7 @@ const router = createRouter({
             name: 'PageNotFound'
         },
     ],
-    history: createWebHistory()
+    history: createWebHashHistory()
 })
 
 app.use(router)
