@@ -1,22 +1,25 @@
 <template>
   <template v-if="!searchActive">
     <!-- SEARCH BUTTON: IF PRESSED THE INPUT IS DISPLAYED -->
-    <button class="button is-primary" @click="activeSearchInputTimeout">
-      <strong>{{ $t('components.search.search_button') }}</strong>
+    <button class="button is-primary is-medium search-button" @click="activeSearchInputTimeout">
+      <span v-if="accessibility">
+        <strong class="search-text">{{ $t('components.search.search_button') }}</strong>
+      </span>
+      <span v-else>
+        <i class="fas fa-search"/>
+      </span>
     </button>
   </template>
   <template v-else>
     <div class="field has-addons navbar-item has-dropdown is-boxed" id="search-wrapper">
       <p class="control has-icons-left">
-        <span>
-          <!-- SEARCH INPUT -->
-          <input class="input is-primary" @focus="activeSearchInputTimeout"
-                 type="search" v-model="searchQuery" @keyup="searchOnEnter"
-                 id="search-input"
-                 :placeholder="$t('components.search.search_text')"/>
-        </span>
+        <!-- SEARCH INPUT -->
+        <input class="input is-primary is-medium" @focus="activeSearchInputTimeout"
+               type="search" v-model="searchQuery" @keyup="searchOnEnter"
+               id="search-input"
+               :placeholder="$t('components.search.search_text')"/>
         <!-- SEARCH ICON ON THE LEFT -->
-        <span class="icon is-small is-left" v-if="!searchButton">
+        <span class="icon is-left">
           <i class="fas fa-search"></i>
         </span>
       </p>
@@ -25,20 +28,11 @@
       <!-- CLEAR BUTTON SWITCHES TO SEARCH BUTTON AFTER SOME TIME
       IF PEOPLE DON'T KNOW HOW TO INITIATE THE SEARCH -->
       <p class="control">
-        <template v-if="!searchButton">
-          <button class="button is-primary" @click="clearButton">
-            <span class="icon is-small">
+        <button class="button is-primary is-medium" @click="clearButton">
+            <span class="icon is-medium">
               <i class="fas fa-times"></i>
             </span>
-          </button>
-        </template>
-        <template v-else>
-          <button class="button is-primary" @click="search">
-            <span class="icon is-small">
-              <i class="fas fa-search"></i>
-            </span>
-          </button>
-        </template>
+        </button>
       </p>
 
 
@@ -56,12 +50,15 @@
 </template>
 
 <script>
+
+
+import {mapGetters} from "vuex";
+
 export default {
   name: 'search',
   data() {
     return {
       searchActive: false,
-      searchButton: false,
       searchQuery: '',
       quickFindTimer: null,
       categoryToComponent: {
@@ -70,12 +67,15 @@ export default {
     }
   },
   inject: [
-    'quickFindResults'
+    'quickFindResults',
   ],
   computed: {
     reactiveQuickFindResults: function () {
       return this.quickFindResults.value
-    }
+    },
+    ...mapGetters({
+      accessibility: 'getAccessibilityStatus'
+    })
   },
   methods: {
     activeSearchInputTimeout: function () {
@@ -87,11 +87,10 @@ export default {
 
       /* it needs some time before being found in the DOM, therefore timeout. */
       setTimeout(() => {
-        document.getElementById('search-input').focus()
-      }, 100)
+        // document.getElementById('search-input').focus()
+      }, 200)
     },
     search: function () {
-      this.searchButton = false
 
       /* emit search event with query to all components.
       Every component decides how to interpret the search. */
@@ -108,8 +107,6 @@ export default {
 
       /* keyCode 13 is "ENTER". */
       if (e.keyCode === 13) {
-        /* disable search button. */
-        this.searchButton = false
 
         /* initiate search. */
         this.search()
@@ -130,16 +127,19 @@ export default {
       if (this.searchQuery !== '') {
         this.searchQuery = ''
       } else {
+        this.$emit('searchIsNotActive')
         this.searchActive = false
       }
     }
   },
   watch: {
     '$route.query': function (newQuery) {
-      if (newQuery.search || newQuery.quickfind === '') {
-        document.getElementById('search-wrapper').classList.remove('is-active')
-      } else if (newQuery.quickfind) {
-        document.getElementById('search-wrapper').classList.add('is-active')
+      if (this.searchActive) {
+        if (newQuery.search || newQuery.quickfind === '') {
+          document.getElementById('search-wrapper').classList.remove('is-active')
+        } else if (newQuery.quickfind) {
+          document.getElementById('search-wrapper').classList.add('is-active')
+        }
       }
     }
   }

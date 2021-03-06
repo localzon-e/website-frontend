@@ -1,9 +1,9 @@
 <template>
   <div class="field has-addons" id="email">
     <p class="control has-icons-left has-icons-right">
-      <input :class="['input', {'is-success': checkEMail && eMail, 'is-warning': !checkEMail && eMail}]"
+      <input :class="['input', {'is-success': checkEmail && eMail, 'is-warning': !checkEmail && eMail}]"
              @focusout="handleEmail"
-             @keypress="removeEmailDelayed"
+             @keypress="removeEmailDelayed; removeUserDelayed"
              @keyup="handleEmailDelayed"
              type="email"
              :placeholder="$t('components.email.email_text')"
@@ -26,7 +26,8 @@
 </template>
 
 <script>
-import {checkEMail} from "@/functions/checkEmail";
+import {checkEmail} from "@/functions/checkEmail.js";
+import {sha3_512} from 'js-sha3'
 
 export default {
   name: 'signin',
@@ -34,24 +35,46 @@ export default {
     return {
       eMail: '',
       checkEmailTimeout: null,
-      checkEMail: false
+      checkEmail: false,
+      checkIfUserExistsTimeout: null
+    }
+  },
+  computed: {
+    encryptedEmail: function () {
+      return sha3_512(this.eMail)
     }
   },
   methods: {
     handleEmail: function () {
-      this.checkEMail = checkEMail(this.eMail)
-      if (this.checkEMail)
-        this.$emit('email', this.eMail)
+      this.checkEmail = checkEmail(this.eMail)
+      if (this.checkEmail)
+        this.$emit('email', this.encryptedEmail)
       else
         this.$emit('email', '')
     },
     handleEmailDelayed: function () {
+      this.checkIfUserExistsDelayed()
       this.checkEmailTimeout = setTimeout(() => {
         this.handleEmail()
-      }, 100)
+      }, 300)
     },
     removeEmailDelayed: function () {
+      this.removeUserDelayed()
       clearTimeout(this.checkEmailTimeout)
+    },
+
+
+    checkIfUserExists: function () {
+      fetch('http://localhost:8081/users/' + this.encryptedEmail)
+          .then(data => console.log(data.text()))
+    },
+    checkIfUserExistsDelayed: function () {
+      this.checkIfUserExistsTimeout = setTimeout(() => {
+        this.checkIfUserExists()
+      }, 2000)
+    },
+    removeUserDelayed: function () {
+      clearTimeout(this.checkIfUserExistsTimeout)
     }
   }
 }

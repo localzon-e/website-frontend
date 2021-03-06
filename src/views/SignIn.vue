@@ -5,7 +5,7 @@
       <password @password="password = $event"/>
       <div class="field">
         <p class="control">
-          <button class="button is-primary" v-if="eMail && password" role="button">
+          <button class="button is-primary" v-if="eMail && password" role="button" @click="submitSignIn">
             {{ $t('views.Contact.submit') }}
           </button>
         </p>
@@ -19,7 +19,7 @@
 
 <script>
 import email from "@/components/common/email";
-import password from "@/components/common/password";
+import password from "@/components/pagination/signIn/password";
 
 export default {
   name: 'signin',
@@ -30,7 +30,8 @@ export default {
   data() {
     return {
       eMail: '',
-      password: ''
+      password: '',
+      data: null
     }
   }
 }

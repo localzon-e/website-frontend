@@ -1,13 +1,15 @@
 <template>
   <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand noselect">
-      <div class="navbar-item noselect">
-        <!-- svg is required here!! -->
-        <router-link class="navbar-item" :to="{ name: 'Home' }">
-          <span id="logo" />
-        </router-link>
 
+      <!-- LOGO -->
+      <div class="navbar-item noselect">
+        <div class="navbar-item">
+          <logo/>
+        </div>
       </div>
+
+      <!-- BURGER TO TOGGLE NAVIGATION BAR ON MOBILE -->
       <a role="button" class="navbar-burger" id="navbarBurger" aria-label="menu" aria-expanded="false"
          data-target="navbarLinks" @click="toggleNavigationBarOnMobile">
         <span aria-hidden="true"></span>
@@ -17,8 +19,11 @@
     </div>
 
     <div id="navbarLinks" class="navbar-menu">
+
+      <!-- NAVIGATION LINKS -->
       <div class="navbar-start">
-        <router-link v-for="route in routes" :key="route" :to="{ name: route.name }" class="navbar-item noselect">
+        <router-link v-for="route in routes" :key="route" :to="{ name: route.name, query: {} }"
+                     class="navbar-item is-size-5 noselect">
           {{ $t('views.' + route.name + '.name') }}
         </router-link>
       </div>
@@ -29,8 +34,10 @@
 
 
       <div class="navbar-end">
+
+        <!-- LANGUAGES -->
         <div class="navbar-item">
-          <div class="select">
+          <div class="select is-medium">
             <select v-model="$i18n.locale">
               <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{
                   mapLocaleToLanguage[locale]
@@ -39,20 +46,32 @@
             </select>
           </div>
         </div>
+
+        <!-- BUTTONS TO REGISTER AND SEARCH -->
         <div class="navbar-item">
           <div class="buttons">
-            <register/>
-            <search v-bind="$attrs" @searchIsActive="searchIsActive" />
+            <accessibility/>
+            <get_location v-show="!searchIsActive"/>
+            <github v-show="!searchIsActive"/>
+            <!-- <donation v-show="!searchIsActive"/> -->
+            <register v-show="!searchIsActive"/>
+            <search v-bind="$attrs" @searchIsActive="activateSearch" @searchIsNotActive="searchIsActive = false"/>
           </div>
         </div>
+
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+import get_location from "@/components/utility/get_location";
+import Github from "@/components/pagination/github";
+import Accessibility from "@/components/pagination/accessibility";
+
 export default {
   name: 'navigation-bar',
+  components: {Accessibility, Github, get_location},
   data() {
     return {
       mapLocaleToLanguage: {
@@ -65,6 +84,7 @@ export default {
         'PageNotFound',
         'SignIn'
       ],
+      searchIsActive: false,
       isHiddenNavigationBarOnMobile: true
     }
   },
@@ -77,24 +97,30 @@ export default {
     toggleNavigationBarOnMobile: function () {
       const burger = document.getElementById('navbarBurger')
       const $target = document.getElementById('navbarLinks')
-      burger.classList.toggle('is-active')
-      $target.classList.toggle('is-active')
+      if (burger !== null)
+        burger.classList.toggle('is-active')
+      if ($target !== null)
+        $target.classList.toggle('is-active')
     },
     hideNavigationBarOnMobile: function () {
       const burger = document.getElementById('navbarBurger')
       const $target = document.getElementById('navbarLinks')
-      burger.classList.remove('is-active')
-      $target.classList.remove('is-active')
+      if (burger !== null)
+        burger.classList.remove('is-active')
+      if ($target !== null)
+        $target.classList.remove('is-active')
     },
-    searchIsActive: function () {
+    activateSearch: function () {
+      this.searchIsActive = true
       this.isHiddenNavigationBarOnMobile = false
       if (this.$route.name !== 'Home')
         this.$router.push({name: 'Home'})
     },
   },
   watch: {
-    '$route.query.search': function () {
-      this.hideNavigationBarOnMobile()
+    '$route.query.search': {
+      handler: 'hideNavigationBarOnMobile',
+      immediate: true
     }
   }
 }

@@ -4,19 +4,23 @@ import './router/createRouter'
 import './createi18n'
 import '@/assets/font_awesome'
 
-import register from '@/components/signIn/signIn.vue'
-import get_location from '@/components/utility/get_location'
 import fix_vul from '@/components/utility/fix_vulnerabilities'
 
-/* search */
-import search from '@/components/common/search/search.vue'
-import search_item_location from "@/components/common/search/search_item_location";
+import logo from '@/components/common/logo.vue'
 
-app.component('register', register)
-app.component('get_location', get_location)
+/* navigation */
+import register from '@/components/pagination/signIn/signIn.vue'
+import get_location from '@/components/utility/get_location'
+import search from '@/components/pagination/search/search.vue'
+import search_item_location from "@/components/pagination/search/search_item_location";
+
 app.component('fix_vul', fix_vul)
 
-/* search */
+app.component('logo', logo)
+
+/* navigation */
+app.component('register', register)
+app.component('get_location', get_location)
 app.component('search', search)
 app.component('search_item_location', search_item_location)
 

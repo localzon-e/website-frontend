@@ -12,7 +12,7 @@
     "Imprint": {
       "name": "Imprint",
       "imprint_text": "Allow us to introduce ourselves.",
-      "imprint_credentials": "We are:<br>Fabian and Josef.<br>78224 Singen (Hohentwiel)<br><br>You can reach us via:<br>localzon-e (at) protonmail.com"
+      "imprint_credentials": "We are:<br><span class='noselect'>Fabian and Josef.</span><br>78224 Singen (Hohentwiel)<br><br>You can reach us via:<br><span class='noselect'>localzon-e (at) protonmail.com</span>"
     },
     "SignIn": {
       "name": "Sign in",
@@ -31,6 +31,9 @@
     },
     "signIn": {
       "signIn_button": "Sign in"
+    },
+    "location": {
+      "location_button": "Localize"
     },
     "email": {
       "email_text": "Email address"

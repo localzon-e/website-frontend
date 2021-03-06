@@ -1,20 +1,22 @@
 import app from '@/createEntrypoint.js'
 import { createStore } from 'vuex'
 
-const vendors = require('@/assets/example_data_vendors.json')
-const articles = require('@/assets/example_data_articles.json')
 
 // Create a new store instance.
 const store = createStore({
     state () {
         return {
-            vendors,
-            articles
+            accessibility: false
+        }
+    },
+    mutations: {
+        toggleAccessibility (state) {
+            state.accessibility = !state.accessibility
         }
     },
     getters: {
-        getAllArticles: (state) => {
-            return Object.values(state.articles).flat()
+        getAccessibilityStatus: (state) => {
+            return state.accessibility || false
         }
     }
 })

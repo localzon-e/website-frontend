@@ -9,7 +9,7 @@ export default {
     },
     handleSearchQuery: function (newQuery) {
       this.fetchData(newQuery, data => {
-        this.$router.push({ name: 'Home', query: { lat: data[0].lat, lon: data[0].lon }})
+        this.$router.push({name: 'Home', query: {lat: data[0].lat, lon: data[0].lon}})
       })
     },
     handleQuickFind: function (newQuery) {
@@ -19,15 +19,19 @@ export default {
             }
         )
       })
-    }
-  },
-  watch: {
-    '$route.query': function (newQuery) {
+    },
+    handleQuery: function (newQuery) {
       if (newQuery.quickfind) {
         this.handleQuickFind(newQuery.quickfind)
       } else if (newQuery.search) {
         this.handleSearchQuery(newQuery.search)
       }
+    }
+  },
+  watch: {
+    '$route.query': {
+      handler: 'handleQuery',
+      immediate: true
     }
   }
 }

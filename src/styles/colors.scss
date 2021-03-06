@@ -2,22 +2,35 @@
 
 /* main colors */
 $green: #5a9c30;
+$blue: #95bf74;
 $light-green: findLightColor($green);
-$dark-green: #4f6608;
+$dark-green: #283f3b;
 $primary: $green;
+$secondary: $blue;
+
+::selection {
+  background: $secondary; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $secondary; /* Gecko Browsers */
+}
 
 
 /* button */
-$pressed: $dark-green;
+$pressed: $secondary;
 $button-color: $primary;
 $button-hover-color: $pressed;
 $button-focus-color: $pressed;
 $button-active-color: $pressed;
 
+
 /* navigation bar */
-$navbar-background-color: #393e46;
+$navbar-background-color: #393e46 !important;
 $navbar-item-color: white;
+$navbar-item-hover-color: $secondary;
+$navbar-item-active-color: $primary;
 
-
-@import "/node_modules/bulma";
+a.router-link-active {
+  color: $primary;
+}
 

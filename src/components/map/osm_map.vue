@@ -18,6 +18,7 @@ export default {
   },
   data() {
     return {
+      // https://support.maptiler.com/i722-protect-your-map-key
       source: new TileJSON({
         url: 'https://api.maptiler.com/maps/streets/tiles.json?key=kIBJW5fNSTqo8BAOwiBH',
         tileSize: 512,

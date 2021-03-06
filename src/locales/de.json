@@ -12,7 +12,7 @@
     "Imprint": {
       "name": "Impressum",
       "imprint_text": "Wir möchten uns vorstellen.",
-      "imprint_credentials": "Wir sind:<br>Fabian und Josef.<br>78224 Singen (Hohentwiel)<br><br>Erreichen könnt ihr uns auf:<br>localzon-e (at) protonmail.com"
+      "imprint_credentials": "Wir sind:<br><span class='noselect'>Fabian und Josef.</span><br>78224 Singen (Hohentwiel)<br><br>Erreichen könnt ihr uns auf:<br><span class='noselect'>localzon-e (at) protonmail.com</span>"
     },
     "SignIn": {
       "name": "Registrierung",
@@ -31,6 +31,9 @@
     },
     "signIn": {
       "signIn_button": "Registrieren"
+    },
+    "location": {
+      "location_button": "Lokalisieren"
     },
     "email": {
       "email_text": "E-Mail-Adresse"

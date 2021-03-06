@@ -26,11 +26,17 @@ export default {
       }
     }
   },
-  watch: {
-    '$route.query': function (newQuery) {
+  methods: {
+    handleQuery: function (newQuery) {
       if (newQuery.lat && newQuery.lon) {
         this.coords = [newQuery.lon, newQuery.lat]
       }
+    }
+  },
+  watch: {
+    '$route.query': {
+      handler: 'handleQuery',
+      immediate: true
     }
   }
 }

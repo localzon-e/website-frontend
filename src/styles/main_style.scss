@@ -1,10 +1,14 @@
 @import "/node_modules/bulma/sass/utilities/initial-variables";
 @import "ol.css";
 @import "ticker.scss";
-@import "colors.scss";
-@import "navigation.scss";
+@import "colors";
+@import "pagination";
 @import "map.scss";
+@import "animations";
 
+* {
+  transition: all .15s ease;
+}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -12,10 +16,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   margin-top: 60px;
-  padding: 1em;
+  padding: 1rem;
 }
 
-*:not(.field textarea, .field input) {
+.noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -29,3 +33,5 @@
 .localzone {
   color: $primary;
 }
+
+@import "/node_modules/bulma";

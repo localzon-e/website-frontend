@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## 0.4.1 - 06.03.2021
+
+### Added
+
+* checkIfUserExists.js: website communicates now with heroku server.
+* accessibility.vue: added accessibility option.
+* github.vue: added direct link to the GitHub project.
+* footer_bar.vue: added always visible footer.
+* COPYING: added license.
+* darkmode.vue: added darkmode. Not is use.
+* tests: Not usable because too buggy...
+
+### Changed
+
+* locales: changed russian and italian translations. Used [DeepL](https://www.deepl.com/translator)
+* logo.vue: outsourced logo and it is not clickable anymore.
+* css: selections are now greeeeen :D
+* location: fixed location.
+
+
 ## 0.4 - 28.02.2021
 
 ### Added

@@ -1,35 +1,37 @@
 <template>
   <div class="field has-addons" id="password">
     <p class="control has-icons-left has-icons-right">
-      <input :class="['input', {'is-success': compactCheckPassword && password, 'is-danger': !compactCheckPassword && password}]"
-             type="text"
-             :placeholder="$t('components.password.password_text')"
-             v-model="password"
-             role="textbox">
+      <input
+          :class="['input', {'is-success': compactCheckPassword && password, 'is-danger': !compactCheckPassword && password}]"
+          type="text"
+          :placeholder="$t('components.password.password_text')"
+          v-model="password"
+          role="textbox">
       <span class="icon is-small is-left">
-      <i class="fas fa-key"></i>
-      </span>
+    <i class="fas fa-key"></i>
+    </span>
     </p>
     <p class="control">
       <template v-if="password">
         <button class="button is-primary" @click="password = ''">
-          <span class="icon is-small">
-            <i class="fas fa-times"></i>
-          </span>
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
         </button>
       </template>
     </p>
   </div>
-  <div v-if="password">
+  <div v-if="!hiddenCheckPassword && !compactCheckPassword && password" class="notification is-danger is-light is-small" id="password-modal">
+    <button class="delete" @click="hiddenCheckPassword = true"/>
     <ul>
       <li v-for="check in Object.entries(checkPassword)" :key="check">
         <div class="icon-text" v-if="check[1]">
           <span class="icon is-small has-text-success"><i class="fas fa-check is-primary"></i></span>
-          <span v-html="descriptions[check[0]][0]" />
+          <span v-html="descriptions[check[0]][0]"/>
         </div>
         <div v-else>
           <span class="icon is-small has-text-danger"><i class="fas fa-times"></i></span>
-          <span v-html="descriptions[check[0]][1]" />
+          <span v-html="descriptions[check[0]][1]"/>
         </div>
       </li>
     </ul>
@@ -52,7 +54,8 @@ export default {
         lowerCase: false,
         specialCharacter: false,
         minimumCharacter: false
-      }
+      },
+      hiddenCheckPassword: false
     }
   },
   computed: {
@@ -77,7 +80,12 @@ export default {
       } else {
         this.$emit('password', '')
       }
-    }
+    },
+    compactCheckPassword: function (newVal) {
+      if (!this.hiddenCheckPassword && newVal === false) {
+        // document.getElementById('password-modal').classList.toggle('is-active', !newVal)
+      }
+    },
   }
 }
 </script>

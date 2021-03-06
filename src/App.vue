@@ -1,19 +1,19 @@
 <template>
   <navigation-bar @resetQuickFind="quickFindResults={}"/>
   <router-view @quickFindResults="addToQuickFind($event)"/>
-  <get_location />
   <fix_vul/>
+  <footer-bar/>
 </template>
 
 <script>
-import NavigationBar from "@/components/navigation_bar";
-import {computed} from 'vue';
-import get_location from "@/components/utility/get_location";
+import NavigationBar from "@/components/pagination/navigation_bar";
+import FooterBar from "@/components/pagination/footer_bar";
 import fix_vul from "@/components/utility/fix_vulnerabilities";
+import {computed} from 'vue';
 
 export default {
   name: 'App',
-  components: {fix_vul, get_location, NavigationBar},
+  components: {fix_vul, FooterBar, NavigationBar},
   data() {
     return {
       quickFindResults: {}

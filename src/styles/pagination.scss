@@ -1,4 +1,6 @@
-@import "colors.scss";
+@import "colors";
+@import "/node_modules/bulma/sass/components/navbar";
+@import "/node_modules/bulma/sass/layout/footer";
 
 #logo {
   max-width: 42px;
@@ -11,4 +13,13 @@
   .navbar-dropdown {
     display: none;
   }
+}
+
+$footer-position: 0;
+$footer-padding: 2rem 1.5rem 3rem;
+
+.footer {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }

@@ -1,0 +1,8 @@
+.spin-fade-enter-active, .spin-fade-leave-active {
+  transition: all 3s ease;
+}
+
+.spin-fade-enter-from, .spin-fade-leave-to {
+  transform: rotateY(180deg);
+  opacity: 0;
+}

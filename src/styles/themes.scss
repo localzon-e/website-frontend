@@ -1,0 +1,51 @@
+@import "/node_modules/bulma/sass/utilities/functions";
+@import "colors";
+
+$bg: 'bg';
+$text: 'text';
+$link: 'link';
+
+/* lightmode */
+$background-color-light: white;
+$texts-background-color-light: $background-color-light;
+$link-color-light: $primary;
+
+
+/* darkmode */
+$background-color-dark: #353535;
+$background-color-dark-top: #353535;
+$background-color-dark-bottom: #262626;
+$texts-background-color-dark: $background-color-dark;
+$link-color-dark: findDarkColor($link-color-light);
+
+$themes: (
+        default: (
+                bg: $background-color-light,
+                text: $background-color-light,
+                link: $link-color-light,
+        ),
+        dark: (
+                bg: $background-color-dark,
+                text: $texts-background-color-dark,
+                link: $link-color-dark,
+        ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
+

@@ -12,7 +12,7 @@
     "Imprint": {
       "name": "Sigla editoriale",
       "imprint_text": "Permetteteci di presentarci.",
-      "imprint_credentials": "Siamo: <br> Fabian e Josef. <br> 78224 Singen (Hohentwiel) <br> <br> Potete contattarci tramite: <br> localzon-e (at) protonmail.com"
+      "imprint_credentials": "Siamo: <br><span class='noselect'>Fabian e Josef.</span><br> 78224 Singen (Hohentwiel) <br> <br> Potete contattarci tramite: <br><span class='noselect'>localzon-e (at) protonmail.com</span>"
     },
     "SignIn": {
       "name": "Accedi",
@@ -28,6 +28,9 @@
     "search": {
       "search_button": "Cerca",
       "search_text": "Cerca Localzon(e)"
+    },
+    "location": {
+      "location_button": "Localizzare"
     },
     "signIn": {
       "signIn_button": "Accedi"
@@ -48,24 +51,24 @@
     "how_it_works": {
       "faq": [
         {
-          "question": "Che cos'è Localzon(e)?",
-          "answer": "<span class = 'localzone'>Localzon(e)</span> è un posto dove puoi trovare generi alimentari locali."
+          "question": "Cos'è Localzon(e)?",
+          "answer": "<span class = 'localzone'>Localzon(e)</span> è un posto dove puoi trovare prodotti alimentari locali."
         },
         {
           "question": "Come funziona?",
-          "answer": "Il modo migliore per iniziare è cercare prodotti. Puoi utilizzare la barra di navigazione in alto per cercare prodotti o località specifiche. Non appena effettui la ricerca, la mappa viene aggiornata e mostra i prodotti e i produttori. "
+          "answer": "Il modo migliore per iniziare è la ricerca dei prodotti. Puoi usare la barra di navigazione in alto per cercare prodotti o luoghi specifici. Non appena si effettua la ricerca, la mappa viene aggiornata e mostra i prodotti e i produttori."
         },
         {
           "question": "Cosa ci guadagno?",
-          "answer": "Puoi utilizzare la nostra piattaforma per trovare nuovi rivenditori locali dove acquistare."
+          "answer": "Puoi usare la nostra piattaforma per trovare nuovi rivenditori locali dove comprare"
         },
         {
           "question": "Costa qualcosa?",
-          "answer": "<b>No</b>. Ti offriamo questa piattaforma gratuitamente."
+          "answer": "<b>No</b>. Ti offriamo questa piattaforma gratuitamente"
         },
         {
           "question": "Come finanziate la vostra piattaforma?",
-          "answer": "Siamo contrari alla pubblicità e al monitoraggio sul nostro sito. Puoi supportare la nostra piattaforma con donazioni."
+          "answer": "Siamo contrari a gestire la pubblicità e il tracciamento sul nostro sito. Puoi sostenere la nostra piattaforma con delle donazioni"
         }
       ]
     }
