@@ -10,14 +10,14 @@
              v-model="eMail"
              role="textbox">
       <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
+      <span class="fas fa-envelope"></span>
       </span>
     </p>
     <p class="control">
       <template v-if="eMail">
         <button class="button is-primary" @click="eMail = ''">
           <span class="icon is-small">
-            <i class="fas fa-times"></i>
+            <span class="fas fa-times"></span>
           </span>
         </button>
       </template>

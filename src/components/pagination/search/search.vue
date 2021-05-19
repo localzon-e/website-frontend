@@ -6,7 +6,7 @@
         <strong class="search-text">{{ $t('components.search.search_button') }}</strong>
       </span>
       <span v-else>
-        <i class="fas fa-search"/>
+        <span class="fas fa-search"/>
       </span>
     </button>
   </template>
@@ -20,7 +20,7 @@
                :placeholder="$t('components.search.search_text')"/>
         <!-- SEARCH ICON ON THE LEFT -->
         <span class="icon is-left">
-          <i class="fas fa-search"></i>
+          <span class="fas fa-search"></span>
         </span>
       </p>
 
@@ -30,7 +30,7 @@
       <p class="control">
         <button class="button is-primary is-medium" @click="clearButton">
             <span class="icon is-medium">
-              <i class="fas fa-times"></i>
+              <span class="fas fa-times"></span>
             </span>
         </button>
       </p>

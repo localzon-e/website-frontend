@@ -28,11 +28,6 @@
         </router-link>
       </div>
 
-      <!-- <div class="navbar-item">
-        <ticker />
-      </div> -->
-
-
       <div class="navbar-end">
 
         <!-- LANGUAGES -->

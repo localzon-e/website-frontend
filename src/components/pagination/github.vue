@@ -4,7 +4,7 @@
       <strong>GitHub</strong>
     </span>
     <span v-else>
-      <i class="fab fa-github"/>
+      <span class="fab fa-github"/>
     </span>
   </a>
 </template>

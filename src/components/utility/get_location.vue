@@ -4,7 +4,7 @@
       <strong>{{ $t('components.location.location_button')}}</strong>
     </span>
     <span v-else>
-      <i class="fas fa-location-arrow"/>
+      <span class="fas fa-location-arrow"/>
     </span>
   </button>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <button :class="['button','is-medium']" @click="toggleAccessibility">
-    <i class="fas fa-universal-access"></i>
+    <span class="fas fa-universal-access"></span>
   </button>
 </template>
 

@@ -3,7 +3,7 @@
 ### newest changes are listed [here](/CHANGELOG.md)
 
 
-![localzone](/src/assets/Logo.png)
+![localzone](./src/assets/Logo_nobg.png)
 
 ### Join the localzon(e)
 1. make sure ```npm``` is installed. Download [node.js](https://nodejs.org).

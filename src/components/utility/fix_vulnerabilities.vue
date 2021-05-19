@@ -9,9 +9,10 @@ export default {
   methods: {
     fix_target: function () {
       const a = document.getElementsByTagName('a')
-      for (let i = 0; i < a.length; i++) {
-        if (a[i].hasAttribute('target'))
-          a[i].setAttribute('rel', 'noopener')
+      for (let aTag of a) {
+        if (aTag.hasAttribute('target')) {
+          aTag.setAttribute('rel', 'noopener')
+        }
       }
     },
     register_fix: function (fix) {
@@ -19,8 +20,8 @@ export default {
     },
     fix: function () {
       const fixes = this.fixes
-      for (let i = 0; i < fixes.length; i++) {
-        fixes[i]()
+      for (let fix of fixes) {
+        fix()
       }
     }
   },

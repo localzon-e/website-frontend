@@ -1,7 +1,7 @@
 <template>
   <button class="button" @click="toggleDarkmode">
-    <i class="fas fa-moon" v-if="darkmode"/>
-    <i class="fas fa-sun" v-else/>
+    <span class="fas fa-moon" v-if="darkmode"/>
+    <span class="fas fa-sun" v-else/>
   </button>
 </template>
 

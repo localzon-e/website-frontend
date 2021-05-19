@@ -4,7 +4,7 @@
       <strong>{{ $t('components.signIn.signIn_button') }}</strong>
     </span>
     <span v-else>
-      <i class="fas fa-sign-in-alt"/>
+      <span class="fas fa-sign-in-alt"/>
     </span>
   </router-link>
 </template>

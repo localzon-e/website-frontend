@@ -8,14 +8,14 @@
           v-model="password"
           role="textbox">
       <span class="icon is-small is-left">
-    <i class="fas fa-key"></i>
+    <span class="fas fa-key"></span>
     </span>
     </p>
     <p class="control">
       <template v-if="password">
         <button class="button is-primary" @click="password = ''">
         <span class="icon is-small">
-          <i class="fas fa-times"></i>
+          <span class="fas fa-times"></span>
         </span>
         </button>
       </template>
@@ -26,11 +26,11 @@
     <ul>
       <li v-for="check in Object.entries(checkPassword)" :key="check">
         <div class="icon-text" v-if="check[1]">
-          <span class="icon is-small has-text-success"><i class="fas fa-check is-primary"></i></span>
+          <span class="icon is-small has-text-success"><span class="fas fa-check is-primary"></span></span>
           <span v-html="descriptions[check[0]][0]"/>
         </div>
         <div v-else>
-          <span class="icon is-small has-text-danger"><i class="fas fa-times"></i></span>
+          <span class="icon is-small has-text-danger"><span class="fas fa-times"></span></span>
           <span v-html="descriptions[check[0]][1]"/>
         </div>
       </li>
@@ -60,12 +60,7 @@ export default {
   },
   computed: {
     compactCheckPassword: function () {
-      const values = Object.values(this.checkPassword)
-      for (let i = 0; i < values.length; i++) {
-        if (values[i] === false)
-          return false
-      }
-      return true
+      return !Object.values(this.checkPassword).some(val => val === false)
     },
     descriptions: function () {
       return this.$i18n.getLocaleMessage(this.$i18n.locale).components.password.password_checks
@@ -74,18 +69,8 @@ export default {
   watch: {
     password: function () {
       this.checkPassword = checkPassword(this.password)
-      const check = this.checkPassword
-      if (check.numbers && check.upperCase && check.lowerCase && check.minimumCharacter) {
-        this.$emit('password', sha3_512(this.password))
-      } else {
-        this.$emit('password', '')
-      }
-    },
-    compactCheckPassword: function (newVal) {
-      if (!this.hiddenCheckPassword && newVal === false) {
-        // document.getElementById('password-modal').classList.toggle('is-active', !newVal)
-      }
-    },
+      this.$emit('password', this.compactCheckPassword ? sha3_512(this.password) : '')
+    }
   }
 }
 </script>
